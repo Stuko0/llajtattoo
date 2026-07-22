@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+const cards = [
+  {
+    t: "Soy Artista",
+    d: "Únete a nuestra comunidad, conecta con clientes, muestra tu portafolio y aprovecha promociones exclusivas para artistas.",
+    btn: "REGISTRARME COMO ARTISTA",
+  },
+  {
+    t: "Soy Cliente",
+    d: "Encuentra al tatuador perfecto para ti. Explora estilos, agenda tu cita y disfruta de la mejor experiencia.",
+    btn: "CREAR CUENTA",
+  },
+];
+---
+<Layout title="Únete" currentPage="unete">
+  <section class="bg-black text-white text-center py-16 md:py-20">
+    <div class="wrap">
+      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white">ÚNETE</h1>
+      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)] max-w-2xl mx-auto">Forma parte de la comunidad más grande de Cochabamba</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 md:py-24">
+    <div class="wrap grid grid-cols-1 md:grid-cols-2 gap-8">
+      {cards.map((c, i) => (
+        <article
+          class="bg-[var(--cgl)] p-10 md:p-14 card-hover rounded-2xl fu border border-gray-100"
+          style={`animation-delay: ${i * 120}ms;`}
+        >
+          <h2 class="font-[var(--font-dl)] font-bold text-[32px] md:text-4xl mb-5 text-black">{c.t}</h2>
+          <p class="font-[var(--font-int)] text-base text-[var(--cm)] mb-8 leading-relaxed">{c.d}</p>
+          <a href="#" class="inline-block bg-[var(--cd)] text-white px-7 py-3 text-sm font-semibold uppercase tracking-wide hover:-translate-y-0.5 hover:opacity-90 transition-all rounded">{c.btn}</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

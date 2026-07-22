@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Comunidad de tatuadores de Cochabamba, Bolivia. Encuentra artistas, estilos y agenda tu prÃ³xima cita.">
+<title>Llajtattoo | Comunidad de tatuadores</title>
+<link rel="stylesheet" href="globals.css">
+<link rel="stylesheet" href="styleguide.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+      corePlugins: {
+        preflight: false
+      },
+      theme: {
+        extend: {
+          boxShadow: {
+            "m3-elevation-light-5": "var(--m3-elevation-light-5)"
+          }
+        }
+      },
+      plugins: []
+    };
+  </script>
+</head>
+<body class="m-0 bg-white text-black">
+<header class="mx-auto flex w-full max-w-[1150px] items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-0 lg:py-6">
+<a href="index.html" class="shrink-0" aria-label="Llajtattoo, ir al inicio">
+<img
+        class="h-auto w-[72px] object-contain sm:w-[130px] lg:w-[210px]"
+        src="https://c.animaapp.com/EmlfpdWX/img/tipografia-manual-de-identidad-visual-ada--1-1@2x.png"
+        alt="Llajtattoo"
+      >
+</a>
+<nav class="hidden items-center gap-4 lg:flex" aria-label="NavegaciÃ³n principal">
+<a href="#inicio" class="font-['Inter',Helvetica] text-sm font-normal text-[#999999] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Inicio</a>
+<a href="#estilos" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Estilos</a>
+<a href="#artistas" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Artistas</a>
+<a href="#unete" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Ãnete</a>
+<a href="#noticias" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Blog</a>
+</nav>
+<form class="hidden items-center rounded-full bg-black px-4 py-2 sm:flex" role="search">
+<label for="site-search" class="sr-only">Buscar estilo</label>
+<img class="mr-2 h-4 w-4" src="https://c.animaapp.com/EmlfpdWX/img/icon-3.svg" alt="">
+<input
+        id="site-search"
+        name="search"
+        type="search"
+        placeholder="Buscar estilo"
+        class="w-24 border-0 bg-transparent font-['Inter',Helvetica] text-xs text-white outline-none placeholder:text-[#999999] lg:w-32"
+      >
+</form>
+</header>
+<main>
+<section id="inicio" class="mx-auto w-full max-w-[1150px] px-4 pb-8 pt-2 sm:px-6 lg:px-0 lg:pb-16 lg:pt-12" aria-labelledby="welcome-title">
+<div class="grid overflow-hidden border-b border-black/30 bg-white shadow-[0px_4px_4px_#00000040] lg:grid-cols-[1fr_410px]">
+<div class="flex min-h-[220px] flex-col justify-center px-5 py-8 sm:px-10 lg:min-h-[500px] lg:px-16">
+<h1 id="welcome-title" class="max-w-[620px] font-['David_Libre',Helvetica] text-2xl font-bold leading-[1.03] sm:text-4xl lg:text-[70px] lg:leading-[72px]">
+Bienvenido a nuestra comunidad
+          </h1>
+<p class="mt-4 max-w-[618px] font-['Inter',Helvetica] text-[10px] font-normal leading-4 text-[#000000b2] sm:text-sm sm:leading-6 lg:mt-8 lg:text-xl lg:leading-[29px]">
+Esta pÃ¡gina estÃ¡ hecha para ti. Descubre la gran comunidad de tatuadores de Cochabamba, encuentra el estilo que buscas, conecta con tu artista favorito y agenda tu cita. Â¡Tu prÃ³ximo tatuaje comienza aquÃ­!
+          </p>
+</div>
+<img
+          class="hidden h-full min-h-[500px] w-full object-cover lg:block"
+          src="https://c.animaapp.com/EmlfpdWX/img/a857e26812706ebffa04258935e3b067-1.png"
+          alt="DiseÃ±o artÃ­stico de tatuaje"
+        >
+<img
+          class="block h-28 w-full object-cover object-center lg:hidden"
+          src="https://c.animaapp.com/EmlfpdWX/img/a857e26812706ebffa04258935e3b067-1.png"
+          alt=""
+        >
+</div>
+</section>
+<section id="artistas" class="relative mx-auto w-full max-w-[1150px] px-4 py-8 text-center sm:px-6 lg:px-0 lg:py-16" aria-labelledby="artists-title">
+<img
+        class="pointer-events-none absolute right-0 top-0 hidden w-36 object-contain opacity-50 lg:block"
+        src="https://c.animaapp.com/EmlfpdWX/img/316dd88347cd99304cee04dec4f5f372-removebg-preview-3.png"
+        alt=""
+      >
+<h2 id="artists-title" class="font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
+Artistas del mes
+      </h2>
+<p class="mx-auto mt-3 max-w-[410px] font-['Inter',Helvetica] text-[10px] font-normal leading-4 sm:text-sm sm:leading-6 lg:mt-6 lg:text-base lg:leading-[29px]">
+Los artistas mÃ¡s destacados del mes por su participaciÃ³n en la convenciÃ³n de tatuajes en Oruro
+      </p>
+<div class="mx-auto mt-8 grid max-w-[900px] grid-cols-3 gap-3 sm:gap-10 lg:mt-12">
+<article class="flex flex-col items-center">
+<img
+            class="h-14 w-14 rounded-full object-cover sm:h-28 sm:w-28 lg:h-[191px] lg:w-[191px]"
+            src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-44-39-am-3.png"
+            alt="Fabian Morales, Profe Tattoo"
+          >
+<h3 class="mt-3 font-['David_Libre',Helvetica] text-[9px] font-bold leading-3 sm:text-sm lg:text-xl lg:leading-[29px]">
+Fabian Morales<br>PROFE TATTOO
+          </h3>
+<a href="#perfil-fabian" class="mt-2 rounded bg-black px-3 py-1 font-['David_Libre',Helvetica] text-[8px] font-medium text-white hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:text-xs">
+Ver Perfil
+          </a>
+</article>
+<article class="flex flex-col items-center">
+<img
+            class="h-14 w-14 rounded-full object-cover sm:h-28 sm:w-28 lg:h-[191px] lg:w-[191px]"
+            src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-44-39-am--1--4.png"
+            alt="Juan Don Juan Caballero"
+          >
+<h3 class="mt-3 font-['David_Libre',Helvetica] text-[9px] font-bold leading-3 sm:text-sm lg:text-xl lg:leading-[29px]">
+Juan<br>Don Juan Caballero
+          </h3>
+<a href="#perfil-juan" class="mt-2 rounded bg-black px-3 py-1 font-['David_Libre',Helvetica] text-[8px] font-medium text-white hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:text-xs">
+Ver Perfil
+          </a>
+</article>
+<article class="flex flex-col items-center">
+<img
+            class="h-14 w-14 rounded-full object-cover sm:h-28 sm:w-28 lg:h-[191px] lg:w-[191px]"
+            src="https://c.animaapp.com/EmlfpdWX/img/img-7036-3.png"
+            alt="Natalia Lazzo, Blackitty"
+          >
+<h3 class="mt-3 font-['David_Libre',Helvetica] text-[9px] font-bold leading-3 sm:text-sm lg:text-xl lg:leading-[29px]">
+Natalia Lazzo<br>BLACKITTY
+          </h3>
+<a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="mt-2 rounded bg-black px-3 py-1 font-['David_Libre',Helvetica] text-[8px] font-medium text-white hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:text-xs">
+Ver Perfil
+          </a>
+</article>
+</div>
+</section>
+<section id="noticias" class="relative overflow-hidden bg-[#f3f3f3] px-4 py-9 text-center sm:px-6 lg:py-16" aria-labelledby="news-title">
+<img
+        class="pointer-events-none absolute left-0 top-1/2 hidden w-64 -translate-y-1/2 opacity-30 lg:block"
+        src="https://c.animaapp.com/EmlfpdWX/img/316dd88347cd99304cee04dec4f5f372-removebg-preview-1-1@2x.png"
+        alt=""
+      >
+<img
+        class="pointer-events-none absolute right-0 top-0 hidden w-72 opacity-30 lg:block"
+        src="https://c.animaapp.com/EmlfpdWX/img/316dd88347cd99304cee04dec4f5f372-removebg-preview-2-2@2x.png"
+        alt=""
+      >
+<div class="relative mx-auto max-w-[1150px]">
+<h2 id="news-title" class="font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
+Noticias
+        </h2>
+<p class="mx-auto mt-3 max-w-[740px] font-['Inter',Helvetica] text-[10px] leading-4 sm:text-sm sm:leading-6 lg:mt-6 lg:text-2xl lg:leading-[29px]">
+Descubre las Ãºltimas tendencias del mundo del tatuaje y entÃ©rate de las noticias mÃ¡s importantes sobre eventos, convenciones y festivales de tattoo en Bolivia y alrededor del mundo.
+        </p>
+<div class="mx-auto mt-6 flex max-w-[520px] items-end justify-center lg:mt-10">
+<img class="h-28 w-[30%] object-cover sm:h-52" src="https://c.animaapp.com/EmlfpdWX/img/15db734ab37aa53760898a964835ed4d-2@2x.png" alt="Noticia sobre tatuajes">
+<img class="h-32 w-[34%] object-cover sm:h-60" src="https://c.animaapp.com/EmlfpdWX/img/a1a98040723a83b3d24538885bdcffc4-1-1.png" alt="Arte y tendencias de tatuajes">
+<img class="h-28 w-[30%] object-cover sm:h-52" src="https://c.animaapp.com/EmlfpdWX/img/7411834f8a7064ea4dcc7e8d54c16359-1@2x.png" alt="Noticias de convenciones de tatuajes">
+</div>
+<a href="#blog" class="mx-auto mt-5 inline-flex min-w-28 justify-center rounded bg-[#07111a] px-8 py-2 font-['David_Libre',Helvetica] text-xs font-medium text-white shadow-[0px_4px_4px_#00000040] hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+Ingresar
+        </a>
+</div>
+</section>
+<section class="mx-auto grid w-full max-w-[1150px] gap-5 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-0 lg:py-20" aria-label="Opciones de la comunidad">
+<article class="flex min-h-[270px] flex-col rounded-[30px] bg-[#000000e6] px-6 py-7 text-center text-white shadow-[4px_4px_4px_4px_#00000040] sm:min-h-[400px] lg:rounded-[60px]">
+<h2 class="font-['David_Libre',Helvetica] text-xl font-bold leading-7 sm:text-2xl lg:text-[32px] lg:leading-[40px]">
+Â¿NO SABES QUÃ ESTILO ES EL TATUAJE QUE QUIERES REALIZARTE?
+        </h2>
+<div class="mt-4 flex flex-1 items-center gap-3 text-left">
+<img class="h-28 w-20 object-cover sm:h-40 sm:w-28" src="https://c.animaapp.com/EmlfpdWX/img/15db734ab37aa53760898a964835ed4d-1@2x.png" alt="Ejemplo de tatuaje">
+<p class="font-['Inter',Helvetica] text-xs leading-5 sm:text-sm sm:leading-6">
+Ingresa a la pestaÃ±a de estilos y encuentra el estilo de tu tatuaje con la carecterÃ­sticas de cada estilo.
+          </p>
+</div>
+<a href="#estilos" class="mt-4 inline-flex justify-center self-center rounded-full bg-white px-6 py-3 font-['Inter',Helvetica] text-sm text-black hover:bg-[#dcdcdc] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">
+IR A ESTILOS
+        </a>
+</article>
+<article id="unete" class="flex min-h-[270px] flex-col rounded-[30px] bg-[#000000e6] px-6 py-7 text-center text-white shadow-[4px_4px_4px_4px_#00000040] sm:min-h-[400px] lg:rounded-[60px]">
+<h2 class="font-['David_Libre',Helvetica] text-2xl font-bold leading-[72px] sm:text-[32px]">
+Eres artista ?
+        </h2>
+<p class="mx-auto mt-6 max-w-[240px] flex-1 font-['Inter',Helvetica] text-sm leading-6 sm:text-base sm:leading-[29px]">
+Ãnete a nuestra comunidad de artistas, conecta con nuevos clientes y disfruta de todos los beneficios que ofrece nuestra plataforma.
+        </p>
+<a href="#aplicar" class="mt-5 inline-flex justify-center self-center rounded-full bg-white px-6 py-3 font-['David_Libre',Helvetica] text-sm font-medium text-black hover:bg-[#dcdcdc] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">
+APLICAR AHORA
+        </a>
+</article>
+<article class="flex min-h-[270px] flex-col rounded-[30px] bg-[#000000e6] px-6 py-7 text-center text-white shadow-[4px_4px_4px_4px_#00000040] sm:min-h-[400px] lg:rounded-[60px]">
+<h2 class="font-['David_Libre',Helvetica] text-xl font-bold leading-7 sm:text-2xl lg:text-[32px] lg:leading-[39px]">
+Â¡ESTE TATUADOR ESTÃ DE PROMOCIÃN ESTE MES!
+        </h2>
+<p class="mx-auto mt-4 max-w-[280px] font-['David_Libre',Helvetica] text-sm font-bold leading-6 sm:text-base sm:leading-[30px]">
+ingresa a su perfil para ver su trabajo y conocer mÃ¡s sobre ella
+        </p>
+<img class="mx-auto mt-4 h-24 w-24 rounded-full object-cover sm:h-36 sm:w-36" src="https://c.animaapp.com/EmlfpdWX/img/img-7036-4@2x.png" alt="Tatuadora en promociÃ³n">
+<a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex justify-center self-center rounded-full bg-[#f629b5] px-6 py-3 font-['Inter',Helvetica] text-xl text-white hover:bg-[#df159f] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black sm:text-2xl">
+2 X 1 FINELINE
+        </a>
+</article>
+</section>
+<section id="estilos" class="mx-auto w-full max-w-[1150px] px-4 py-8 sm:px-6 lg:px-0 lg:py-16" aria-labelledby="styles-title">
+<h2 id="styles-title" class="text-center font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
+Explorar por estilos
+      </h2>
+<div class="mx-auto mt-8 grid max-w-[965px] grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-12 lg:gap-10">
+<article class="overflow-hidden rounded-2xl bg-[#000000e8] p-3 text-center text-white lg:rounded-[30px]">
+<img class="mx-auto h-24 w-24 object-cover sm:h-40 sm:w-40 lg:h-[210px] lg:w-[210px]" src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-38-35-am--2--1.png" alt="Tatuaje tradicional">
+<h3 class="mt-3 font-['Inter',Helvetica] text-base font-bold">Estilo</h3>
+<p class="mt-1 font-['Inter',Helvetica] text-sm">tradicional</p>
+<a href="#tradicional" class="mt-4 flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-xs font-bold text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-white">INGRESAR</a>
+</article>
+<article class="overflow-hidden rounded-2xl bg-[#000000e8] p-3 text-center text-white lg:rounded-[30px]">
+<img class="mx-auto h-24 w-24 object-cover sm:h-40 sm:w-40 lg:h-[201px] lg:w-[201px]" src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-38-36-am--10--1.png" alt="Tatuaje fine line">
+<h3 class="mt-3 font-['Inter',Helvetica] text-base font-bold">Estilo</h3>
+<p class="mt-1 font-['Inter',Helvetica] text-sm">Fine line</p>
+<a href="#fineline" class="mt-4 flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-xs font-bold text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-white">INGRESAR</a>
+</article>
+<article class="overflow-hidden rounded-2xl bg-[#000000e8] p-3 text-center text-white lg:rounded-[30px]">
+<img class="mx-auto h-24 w-24 object-cover sm:h-40 sm:w-40 lg:h-[208px] lg:w-[208px]" src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-38-36-am--6--2.png" alt="Tatuaje neotradicional">
+<h3 class="mt-3 font-['Inter',Helvetica] text-base font-bold">Estilo</h3>
+<p class="mt-1 font-['Inter',Helvetica] text-sm">Neotradicional</p>
+<a href="#neotradicional" class="mt-4 flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-xs font-bold text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-white">INGRESAR</a>
+</article>
+<article class="overflow-hidden rounded-2xl bg-[#000000e8] p-3 text-center text-white lg:rounded-[30px]">
+<img class="mx-auto h-24 w-24 object-cover sm:h-40 sm:w-40 lg:h-[201px] lg:w-[202px]" src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-38-36-am--11--2.png" alt="Tatuaje blackwork">
+<h3 class="mt-3 font-['Inter',Helvetica] text-base font-bold">Estilo</h3>
+<p class="mt-1 font-['Inter',Helvetica] text-sm">Blackwork</p>
+<a href="#blackwork" class="mt-4 flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-xs font-bold text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-white">INGRESAR</a>
+</article>
+<article class="overflow-hidden rounded-2xl bg-[#000000e8] p-3 text-center text-white lg:rounded-[30px]">
+<img class="mx-auto h-24 w-24 object-cover sm:h-40 sm:w-40 lg:h-[220px] lg:w-[220px]" src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-38-35-am--6--1.png" alt="Tatuaje realista">
+<h3 class="mt-3 font-['Inter',Helvetica] text-base font-bold">Estilo</h3>
+<p class="mt-1 font-['Inter',Helvetica] text-sm">Realismo</p>
+<a href="#realismo" class="mt-4 flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-xs font-bold text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-white">INGRESAR</a>
+</article>
+<article class="overflow-hidden rounded-2xl bg-[#000000e8] p-3 text-center text-white lg:rounded-[30px]">
+<img class="mx-auto h-24 w-24 object-cover sm:h-40 sm:w-40 lg:h-[197px] lg:w-[197px]" src="https://c.animaapp.com/EmlfpdWX/img/whatsapp-image-2025-12-12-at-12-38-35-am--5--1.png" alt="Tatuaje realista">
+<h3 class="mt-3 font-['Inter',Helvetica] text-base font-bold">Estilo</h3>
+<p class="mt-1 font-['Inter',Helvetica] text-sm">Realismo</p>
+<a href="#realismo" class="mt-4 flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-xs font-bold text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-white">INGRESAR</a>
+</article>
+</div>
+</section>
+<section class="relative overflow-hidden bg-black px-4 py-10 text-white sm:px-6 lg:py-20" aria-labelledby="steps-title">
+<img class="pointer-events-none absolute bottom-0 left-0 hidden h-full w-auto opacity-20 lg:block" src="https://c.animaapp.com/EmlfpdWX/img/clip0-70-26.png" alt="">
+<div class="relative mx-auto max-w-[1150px]">
+<h2 id="steps-title" class="text-center font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
+Tu prÃ³ximo tatuaje en 3 pasos
+        </h2>
+<p class="mt-3 text-center font-['Inter',Helvetica] text-xs text-[#ffffffb2] sm:text-sm lg:mt-6 lg:text-xl">
+Sigue estos tres pasos para realizarte un tatuaje
+        </p>
+<ol class="mt-8 grid gap-5 md:grid-cols-3 lg:mt-14">
+<li class="relative rounded-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
+<span class="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white">
+<img class="h-10 w-10 object-contain" src="https://c.animaapp.com/EmlfpdWX/img/search-alt-fill-1.png" alt="">
+</span>
+<h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">EXPLORA</h3>
+<p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
+Explora la pÃ¡gina para descubrir promociones, artistas y las Ãºltimas noticias del mundo del tatuaje. Si ya tienes un estilo en mente, elige a tu tatuador de acuerdo con su especialidad y conecta con el artista que mejor se adapte a tus gustos.
+            </p>
+</li>
+<li class="relative rounded-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
+<span class="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white">
+<img class="h-10 w-10 object-contain" src="https://c.animaapp.com/EmlfpdWX/img/desk-fill-1.png" alt="">
+</span>
+<h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">AGENDA</h3>
+<p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
+Si ya escogiste a tu tatuador, puedes ingresar a sus redes sociales para interactuar con Ã©l, enviarle un mensaje y agendar una cita.
+            </p>
+</li>
+<li class="relative rounded-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
+<span class="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white">
+<img class="h-10 w-10 object-contain" src="https://c.animaapp.com/EmlfpdWX/img/edit-fill-1.png" alt="">
+</span>
+<h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">TATÃATE</h3>
+<p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
+Una vez que agendes tu cita, tatÃºate y disfruta de tu nuevo tatuaje.
+            </p>
+</li>
+</ol>
+</div>
+</section>
+<section class="relative mx-auto max-w-[1150px] overflow-hidden px-4 py-12 text-center sm:px-6 lg:px-0 lg:py-20" aria-labelledby="rating-title">
+<img class="pointer-events-none absolute left-0 top-1/2 hidden w-64 -translate-y-1/2 opacity-40 lg:block" src="https://c.animaapp.com/EmlfpdWX/img/316dd88347cd99304cee04dec4f5f372-removebg-preview-4@2x.png" alt="">
+<img class="pointer-events-none absolute right-0 top-0 hidden w-64 opacity-40 lg:block" src="https://c.animaapp.com/EmlfpdWX/img/316dd88347cd99304cee04dec4f5f372-removebg-preview-4@2x.png" alt="">
+<div class="relative mx-auto max-w-[747px] bg-[#f3f3f3] px-6 py-10 shadow-[0px_4px_4px_#00000040]">
+<h2 id="rating-title" class="font-['David_Libre',Helvetica] text-2xl font-bold sm:text-3xl lg:text-[50px] lg:leading-[58px]">
+CALIFICA LA PÃGINA
+        </h2>
+<div class="mx-auto mt-6 max-w-[456px] rounded-full bg-black px-5 py-4">
+<p class="font-['David_Libre',Helvetica] text-sm font-bold leading-6 text-white sm:text-xl sm:leading-[35px]">
+Â¿ Quedaste satisfecho con los resultados de busqueda?
+          </p>
+</div>
+<form class="mt-8" aria-label="CalificaciÃ³n de la pÃ¡gina">
+<fieldset>
+<legend class="sr-only">Selecciona una calificaciÃ³n de una a cinco estrellas</legend>
+<div class="flex justify-center gap-2" role="radiogroup">
+<label class="cursor-pointer">
+<input class="peer sr-only" type="radio" name="rating" value="1">
+<span class="block text-3xl text-[#999999] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-black peer-checked:text-black" aria-hidden="true">â</span>
+<span class="sr-only">1 estrella</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="radio" name="rating" value="2">
+<span class="block text-3xl text-[#999999] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-black peer-checked:text-black" aria-hidden="true">â</span>
+<span class="sr-only">2 estrellas</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="radio" name="rating" value="3">
+<span class="block text-3xl text-[#999999] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-black peer-checked:text-black" aria-hidden="true">â</span>
+<span class="sr-only">3 estrellas</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="radio" name="rating" value="4">
+<span class="block text-3xl text-[#999999] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-black peer-checked:text-black" aria-hidden="true">â</span>
+<span class="sr-only">4 estrellas</span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="radio" name="rating" value="5">
+<span class="block text-3xl text-[#999999] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-black peer-checked:text-black" aria-hidden="true">â</span>
+<span class="sr-only">5 estrellas</span>
+</label>
+</div>
+</fieldset>
+</form>
+</div>
+</section>
+</main>
+<footer class="border-t border-black/20 px-4 py-10 sm:px-6 lg:px-0" aria-label="Pie de pÃ¡gina">
+<div class="mx-auto grid max-w-[1150px] gap-8 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+<section aria-label="InformaciÃ³n de Llajtattoo">
+<img class="h-auto w-28 object-cover sm:w-40" src="https://c.animaapp.com/EmlfpdWX/img/brujas-log31o-3@2x.png" alt="Llajtattoo">
+<p class="mt-4 max-w-[198px] font-['Inter',Helvetica] text-sm leading-6 text-[#5c6674]">
+Bienvenido a nuestra comunidad de Tatuadores de Cochabamba Bolivia
+        </p>
+</section>
+<nav aria-labelledby="footer-navigation">
+<h2 id="footer-navigation" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black">NAVIGATION</h2>
+<ul class="mt-3 space-y-2">
+<li><a href="#inicio" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Inicio</a></li>
+<li><a href="#estilos" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Estilos</a></li>
+<li><a href="#artistas" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Artistas</a></li>
+<li><a href="#unete" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Unete</a></li>
+</ul>
+</nav>
+<section aria-labelledby="social-links">
+<h2 id="social-links" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black">REDES SOCIALES</h2>
+<ul class="mt-3 space-y-2">
+<li>
+<a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">
+Instagram
+            </a>
+</li>
+<li>
+<a href="https://api.whatsapp.com/send?phone=59176138478&text=Hola!" target="_blank" rel="noopener noreferrer" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">
+Whatsapp
+            </a>
+</li>
+<li>
+<a href="https://www.tiktok.com/@blackitty.tattoo?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">
+Tik tok
+            </a>
+</li>
+</ul>
+</section>
+<section class="self-start rounded-[30px] bg-[#000000e8] p-5 text-center shadow-m3-elevation-light-5" aria-label="Ãnete a la comunidad">
+<a href="#aplicar" class="inline-flex rounded-full bg-white px-8 py-3 font-['David_Libre',Helvetica] text-xl font-medium text-black hover:bg-[#dcdcdc] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black">
+ÃNETE
+        </a>
+</section>
+</div>
+<div class="mx-auto mt-8 flex max-w-[1150px] flex-col gap-3 border-t border-black/30 pt-5 font-['Inter',Helvetica] text-xs text-black/40 sm:flex-row sm:items-center sm:justify-between">
+<p>Â© 2025 Llajtattoo | All Rights Reserved. Design by Blackitty</p>
+<div class="flex gap-5">
+<a href="#terms" class="hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Terms of Service</a>
+<a href="#privacy" class="hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Privacity Policity</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

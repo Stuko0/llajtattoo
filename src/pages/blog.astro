@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+const posts = [
+  { t: "Cuidados post-tatuaje",   tag: "Tendencias", img: "/images/assets/new1.png" },
+  { t: "Convención 2025",          tag: "Eventos",    img: "/images/assets/new2.png" },
+  { t: "Guía de estilos",          tag: "Estilos",    img: "/images/assets/new3.png" },
+  { t: "Microtatuajes en auge",    tag: "Tendencias", img: "/images/assets/new4.png" },
+  { t: "Entrevista: PROFE TATTOO", tag: "Artistas",   img: "/images/assets/Profe Tattoo.png" },
+  { t: "Blackwork: historia",      tag: "Estilos",    img: "/images/assets/blackwork.png" },
+];
+---
+<Layout title="Blog" currentPage="blog">
+  <section class="bg-black text-white text-center py-16 md:py-20">
+    <div class="wrap">
+      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white">BLOG</h1>
+      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)] max-w-2xl mx-auto">Noticias y tendencias del mundo del tatuaje</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 md:py-24">
+    <div class="wrap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+      {posts.map((p, i) => (
+        <article
+          class="bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] overflow-hidden card-hover rounded-xl fu border border-gray-100 flex flex-col"
+          style={`animation-delay: ${i * 80}ms;`}
+        >
+          <div class="h-[220px] overflow-hidden bg-[var(--cd)]">
+            <img src={p.img} alt={p.t} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="inline-block bg-[var(--cd)] text-white px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4 self-start rounded">{p.tag}</span>
+            <h3 class="font-[var(--font-dl)] font-medium text-xl md:text-[22px] mb-4 text-black">{p.t}</h3>
+            <a href="#" class="mt-auto text-sm font-bold text-[var(--ca)] hover:opacity-75 transition-opacity inline-flex items-center gap-1 uppercase tracking-wide">Leer más <span>&rarr;</span></a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
