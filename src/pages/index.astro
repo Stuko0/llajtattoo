@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 import NewsPills from "../components/NewsPills.tsx";
 import StarRating from "../components/StarRating.tsx";
 ---
@@ -29,35 +31,7 @@ tailwind.config = {
   </script>
 </head>
 <body class="m-0 bg-white text-black">
-<header class="mx-auto flex w-full max-w-[1150px] items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-0 lg:py-6">
-<a href="/" class="shrink-0" aria-label="Llajtattoo, ir al inicio">
-<img
-        class="h-auto w-[72px] object-contain sm:w-[130px] lg:w-[210px]"
-        src="/images/logo.png"
-        alt="Llajtattoo"
-      >
-</a>
-<nav class="hidden items-center gap-4 lg:flex" aria-label="Navegación principal">
-<a href="/" class="font-['Inter',Helvetica] text-sm font-normal text-[#999999] hover:text-black">Inicio</a>
-<a href="/estilos" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999]">Estilos</a>
-<a href="#artistas" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999]">Artistas</a>
-<a href="#unete" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999]">Únete</a>
-<a href="#noticias" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999]">Blog</a>
-</nav>
-<form class="hidden items-center rounded-full bg-black px-4 py-2 sm:flex" role="search">
-<label for="site-search" class="sr-only">Buscar estilo</label>
-<svg class="mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-</svg>
-<input
-        id="site-search"
-        name="search"
-        type="search"
-        placeholder="Buscar estilo"
-        class="w-24 border-0 bg-transparent font-['Inter',Helvetica] text-xs text-white outline-none placeholder:text-[#999999] lg:w-32"
-      >
-</form>
-</header>
+<Navbar currentPage="inicio" />
 <main>
 <section id="inicio" class="mx-auto w-full max-w-[1150px] px-4 pb-8 pt-2 sm:px-6 lg:px-0 lg:pb-16 lg:pt-12" aria-labelledby="welcome-title">
 <div class="grid overflow-hidden border-b border-black/30 bg-white shadow-[0px_4px_4px_#00000040] lg:grid-cols-[1fr_410px]">
@@ -357,44 +331,6 @@ style="transform:translateY(-50%);"
 </div>
 <StarRating client:load />
 </main>
-<footer class="border-t border-black/20 px-4 py-10 sm:px-6 lg:px-0" aria-label="Pie de página">
-<div class="mx-auto grid max-w-[1150px] gap-8 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-<section aria-label="Información de Llajtattoo">
-<img class="h-auto w-28 object-cover sm:w-40" src="/images/footer-logo.png" alt="Llajtattoo">
-<p class="mt-4 max-w-[198px] font-['Inter',Helvetica] text-sm leading-6 text-[#5c6674]">
-Bienvenido a nuestra comunidad de Tatuadores de Cochabamba Bolivia
-        </p>
-</section>
-<nav aria-labelledby="footer-navigation">
-<h2 id="footer-navigation" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black">NAVIGATION</h2>
-<ul class="mt-3 space-y-2">
-<li><a href="/" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black">Inicio</a></li>
-<li><a href="/estilos" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black">Estilos</a></li>
-<li><a href="#artistas" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black">Artistas</a></li>
-<li><a href="#unete" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black">Unete</a></li>
-</ul>
-</nav>
-<section aria-labelledby="social-links">
-<h2 id="social-links" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black">REDES SOCIALES</h2>
-<ul class="mt-3 space-y-2">
-<li><a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black">Instagram</a></li>
-<li><a href="https://api.whatsapp.com/send?phone=59176138478&text=Hola!" target="_blank" rel="noopener noreferrer" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black">Whatsapp</a></li>
-<li><a href="https://www.tiktok.com/@blackitty.tattoo?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="font-['Inter',Helvetica] text-sm text-[#5c6674] hover:text-black">Tik tok</a></li>
-</ul>
-</section>
-<section class="self-start rounded-[30px] bg-[#000000e8] px-7 py-10 text-center shadow-m3-elevation-light-5" aria-label="Únete a la comunidad">
-<a href="#aplicar" class="inline-flex rounded-tl-[20px] rounded-br-[20px] rounded-tr-[10px] rounded-bl-[10px] bg-white px-12 py-2 font-['David_Libre',Helvetica] text-xl font-medium text-black hover:bg-[#dcdcdc]">
-ÚNETE
-        </a>
-</section>
-</div>
-<div class="mx-auto mt-8 flex max-w-[1150px] flex-col gap-3 border-t border-black/30 pt-5 font-['Inter',Helvetica] text-xs text-black/40 sm:flex-row sm:items-center sm:justify-between">
-<p>© 2025 Llajtattoo | All Rights Reserved. Design by Blackitty</p>
-<div class="flex gap-5">
-<a href="#terms" class="hover:text-black">Terms of Service</a>
-<a href="#privacy" class="hover:text-black">Privacity Policity</a>
-</div>
-</div>
-</footer>
+<Footer />
 </body>
 </html>

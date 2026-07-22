@@ -1,26 +1,39 @@
 ---
-// Navbar — exact structure from anima_output.html
+export interface Props {
+  currentPage?: string;
+}
+const { currentPage = "inicio" } = Astro.props;
+const links = [
+  { href: "/", label: "Inicio", id: "inicio" },
+  { href: "/estilos", label: "Estilos", id: "estilos" },
+  { href: "/artistas", label: "Artistas", id: "artistas" },
+  { href: "#unete", label: "Únete", id: "unete" },
+  { href: "#noticias", label: "Blog", id: "blog" },
+];
 ---
 
 <header class="mx-auto flex w-full max-w-[1150px] items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-0 lg:py-6">
   <a href="/" class="shrink-0" aria-label="Llajtattoo, ir al inicio">
-    <img
-      class="h-auto w-[72px] object-contain sm:w-[130px] lg:w-[210px]"
-      src="/images/logo.png"
-      alt="Llajtattoo"
-    >
+    <img class="h-auto w-[72px] object-contain sm:w-[130px] lg:w-[210px]" src="/images/logo.png" alt="Llajtattoo">
   </a>
   <nav class="hidden items-center gap-4 lg:flex" aria-label="Navegación principal">
-    <a href="/" class="font-['Inter',Helvetica] text-sm font-normal text-[#999999] hover:text-black focus:outline-none focus:ring-2 focus:ring-black">Inicio</a>
-    <a href="/estilos" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Estilos</a>
-    <a href="/artistas" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Artistas</a>
-    <a href="/unete" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Únete</a>
-    <a href="/blog" class="font-['Inter',Helvetica] text-sm font-normal text-black hover:text-[#999999] focus:outline-none focus:ring-2 focus:ring-black">Blog</a>
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class={`font-['Inter',Helvetica] text-sm font-normal ${
+          currentPage === link.id
+            ? "text-[#999999]"
+            : "text-black hover:text-[#999999]"
+        }`}
+      >
+        {link.label}
+      </a>
+    ))}
   </nav>
   <form class="hidden items-center rounded-full bg-black px-4 py-2 sm:flex" role="search">
     <label for="site-search" class="sr-only">Buscar estilo</label>
-    <svg class="mr-2 h-4 w-4 text-white shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <svg class="mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
     </svg>
     <input
       id="site-search"
