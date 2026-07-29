@@ -10,10 +10,11 @@ const posts = [
 ];
 ---
 <Layout title="Blog" currentPage="blog">
-  <section class="bg-black text-white text-center py-16 md:py-20">
-    <div class="wrap">
-      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white">BLOG</h1>
-      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)] max-w-2xl mx-auto">Noticias y tendencias del mundo del tatuaje</p>
+  <section class="bg-black text-white text-center py-16 md:py-20 relative overflow-hidden">
+    <img class="pointer-events-none absolute right-0 top-0 h-full w-auto opacity-10 object-cover" src="/images/assets/dragon-in-black.png" alt="">
+    <div class="wrap relative">
+      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white" style="animation:fUp 0.6s ease forwards">BLOG</h1>
+      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)] max-w-2xl mx-auto" style="animation:fUp 0.6s ease forwards 0.1s;opacity:0">Noticias y tendencias del mundo del tatuaje</p>
     </div>
   </section>
 
@@ -21,16 +22,17 @@ const posts = [
     <div class="wrap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
       {posts.map((p, i) => (
         <article
-          class="bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] overflow-hidden card-hover rounded-xl fu border border-gray-100 flex flex-col"
-          style={`animation-delay: ${i * 80}ms;`}
+          class="bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] overflow-hidden rounded-xl border border-gray-100 flex flex-col hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] hover:-translate-y-1 transition-all duration-300"
+          style={`animation: fUp 0.6s ease forwards ${i * 0.08}s;`}
         >
-          <div class="h-[220px] overflow-hidden bg-[var(--cd)]">
-            <img src={p.img} alt={p.t} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <div class="h-[220px] overflow-hidden bg-[var(--cd)] relative">
+            <div class="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 z-10"></div>
+            <img src={p.img} alt={p.t} class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
           </div>
           <div class="p-6 flex flex-col flex-1">
             <span class="inline-block bg-[var(--cd)] text-white px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-4 self-start rounded">{p.tag}</span>
             <h3 class="font-[var(--font-dl)] font-medium text-xl md:text-[22px] mb-4 text-black">{p.t}</h3>
-            <a href="#" class="mt-auto text-sm font-bold text-[var(--ca)] hover:opacity-75 transition-opacity inline-flex items-center gap-1 uppercase tracking-wide">Leer más <span>&rarr;</span></a>
+            <a href="#" class="mt-auto text-sm font-bold text-[var(--ca)] hover:text-[#d01e6e] transition-colors inline-flex items-center gap-1 uppercase tracking-wide group">Leer más <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></a>
           </div>
         </article>
       ))}

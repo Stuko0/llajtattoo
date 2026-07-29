@@ -3,51 +3,52 @@
 // Icons: search-alt-fill-1.png → SVG lupa, desk-fill-1.png → SVG calendario, edit-fill-1.png → SVG lápiz
 ---
 
-<section class="relative overflow-hidden bg-black px-4 py-10 text-white sm:px-6 lg:py-20" aria-labelledby="steps-title">
+<section class="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:py-20" aria-labelledby="steps-title">
   <img class="pointer-events-none absolute bottom-0 left-0 hidden h-full w-auto opacity-20 lg:block" src="/images/assets/tattoo-background.png" alt="">
-  <div class="relative mx-auto max-w-[1150px]">
+  <div class="relative mx-auto max-w-[1308px]">
     <h2 id="steps-title" class="text-center font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
       Tu próximo tatuaje en 3 pasos
     </h2>
     <p class="mt-3 text-center font-['Inter',Helvetica] text-xs text-[#ffffffb2] sm:text-sm lg:mt-6 lg:text-xl">
       Sigue estos tres pasos para realizarte un tatuaje
     </p>
-    <ol class="mt-8 grid gap-5 md:grid-cols-3 lg:mt-14">
-      <li class="relative rounded-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
-        <span class="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white">
-          <!-- search (lupa) SVG inline -->
-          <svg class="h-10 w-10" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="m21 21-4.3-4.3"/>
+    <ol class="mt-10 grid gap-6 md:grid-cols-3 lg:mt-16 lg:gap-10 items-start">
+      <li class="relative rounded-tl-[80px] rounded-br-[80px] rounded-tr-[30px] rounded-bl-[30px] bg-white px-6 pb-6 pt-14 text-center text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="min-height:241px; max-width:409px; margin-left:auto; margin-right:auto; width:100%;">
+        <span class="absolute -top-12 left-1/2 flex h-28 w-28 -translate-x-1/2 items-center justify-center rounded-full bg-white shadow-md">
+          <!-- Search icon (lupa) from Figma: Search_alt_fill -->
+          <svg width="64" height="64" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M44 16C59.464 16 72 28.536 72 44C72 59.464 59.464 72 44 72C28.536 72 16 59.464 16 44C16 28.536 28.536 16 44 16ZM44 27C41.7675 27 39.5567 27.4396 37.4941 28.2939C35.4317 29.1483 33.558 30.4009 31.9795 31.9795C30.4009 33.558 29.1483 35.4317 28.2939 37.4941C27.4396 39.5567 27 41.7675 27 44C27 44.5523 27.4477 45 28 45C28.5523 45 29 44.5523 29 44C29 42.0302 29.3878 40.0796 30.1416 38.2598C30.8954 36.4399 32.0007 34.7864 33.3936 33.3936C34.7864 32.0007 36.4399 30.8954 38.2598 30.1416C40.0796 29.3878 42.0302 29 44 29C44.5523 29 45 28.5523 45 28C45 27.4477 44.5523 27 44 27Z" fill="#222222"/>
+            <path d="M80 80L72 72" stroke="#222222" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </span>
-        <h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">EXPLORA</h3>
-        <p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
+        <h3 class="font-['David_Libre',Helvetica] text-[32px] font-bold leading-[29px]">EXPLORA</h3>
+        <p class="mt-4 font-['Inter',Helvetica] text-base leading-[29px] text-justify">
           Explora la página para descubrir promociones, artistas y las últimas noticias del mundo del tatuaje. Si ya tienes un estilo en mente, elige a tu tatuador de acuerdo con su especialidad y conecta con el artista que mejor se adapte a tus gustos.
         </p>
       </li>
-      <li class="relative rounded-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
-        <span class="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white">
-          <!-- desk/calendar SVG inline -->
-          <svg class="h-10 w-10" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <path d="M16 2v4M8 2v4M3 10h18"/>
+      <li class="relative rounded-tl-[80px] rounded-br-[80px] rounded-tr-[30px] rounded-bl-[30px] bg-white px-6 pb-6 pt-14 text-center text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-lg lg:mt-8" style="min-height:207px; max-width:409px; margin-left:auto; margin-right:auto; width:100%;">
+        <span class="absolute -top-12 left-1/2 flex h-28 w-28 -translate-x-1/2 items-center justify-center rounded-full bg-white shadow-md">
+          <!-- Desk/Calendar icon from Figma: Desk_fill -->
+          <svg width="68" height="68" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M69.3333 13L69.3332 26M34.6666 13L34.6666 26" stroke="#222222" stroke-width="2" stroke-linecap="round"/>
+            <path d="M67.333 17.3369V26C67.333 27.1045 68.2286 27.9998 69.333 28C70.4376 28 71.333 27.1046 71.333 26V17.3594C79.4954 17.4702 84.1062 18.0546 87.1924 21.1406C91 24.9482 91 31.0767 91 43.333V65C91 77.2565 91 83.3848 87.1924 87.1924C83.3848 91 77.2565 91 65 91H39C26.7435 91 20.6152 91 16.8076 87.1924C13 83.3848 13 77.2565 13 65V43.333C13 31.0767 13 24.9482 16.8076 21.1406C19.8936 18.0548 24.5042 17.4702 32.666 17.3594V26C32.666 27.1043 33.5617 27.9996 34.666 28C35.7706 28 36.666 27.1046 36.666 26V17.3369C37.4184 17.3358 38.196 17.333 39 17.333H65C65.8037 17.333 66.581 17.3358 67.333 17.3369ZM34.667 68.333C34.1148 68.333 33.6672 68.7809 33.667 69.333C33.667 69.8853 34.1147 70.333 34.667 70.333H69.334C69.886 70.3327 70.334 69.8851 70.334 69.333C70.3338 68.7811 69.8859 68.3334 69.334 68.333H34.667ZM34.667 51C34.1147 51 33.667 51.4477 33.667 52C33.667 52.5523 34.1147 53 34.667 53H69.334C69.886 52.9996 70.334 52.5521 70.334 52C70.334 51.4479 69.886 51.0004 69.334 51H34.667Z" fill="#222222"/>
           </svg>
         </span>
-        <h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">AGENDA</h3>
-        <p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
+        <h3 class="font-['David_Libre',Helvetica] text-[32px] font-bold leading-[29px]">AGENDA</h3>
+        <p class="mt-4 font-['Inter',Helvetica] text-base leading-[29px] text-justify">
           Si ya escogiste a tu tatuador, puedes ingresar a sus redes sociales para interactuar con él, enviarle un mensaje y agendar una cita.
         </p>
       </li>
-      <li class="relative rounded-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
-        <span class="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white">
-          <!-- edit (lápiz) SVG inline -->
-          <svg class="h-10 w-10" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+      <li class="relative rounded-tl-[80px] rounded-br-[80px] rounded-tr-[30px] rounded-bl-[30px] bg-white px-6 pb-6 pt-14 text-center text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="min-height:207px; max-width:409px; margin-left:auto; margin-right:auto; width:100%;">
+        <span class="absolute -top-12 left-1/2 flex h-28 w-28 -translate-x-1/2 items-center justify-center rounded-full bg-white shadow-md">
+          <!-- Edit icon (lápiz) from Figma: Edit_fill -->
+          <svg width="60" height="60" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M43.3762 27.4565C46.939 33.1886 51.812 38.0275 57.6135 41.5522L29.1897 69.9771C28.7647 70.402 28.5523 70.6147 28.2913 70.7544C28.0302 70.8941 27.7352 70.9529 27.1458 71.0708L11.3606 74.228C11.028 74.2946 10.8615 74.3275 10.7668 74.2329C10.6726 74.1383 10.7053 73.9722 10.7717 73.6401L13.929 57.854C14.0467 57.2651 14.1058 56.9704 14.2454 56.7095C14.3851 56.4484 14.5976 56.2351 15.0227 55.8101L43.3762 27.4565ZM60.2083 11.4536C61.0366 11.4536 61.7032 12.1204 63.0364 13.4536L71.5461 21.9634C72.8793 23.2965 73.546 23.9632 73.5461 24.7915C73.5461 25.6199 72.8795 26.2873 71.5461 27.6206L59.0715 40.0942C53.2192 36.6333 48.3309 31.7819 44.8293 26.0024L57.3801 13.4536C58.7133 12.1204 59.3799 11.4537 60.2083 11.4536Z" fill="#222222"/>
+            <line x1="3.64645" y1="80.6464" x2="13.6464" y2="70.6464" stroke="black"/>
           </svg>
         </span>
-        <h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">TATÚATE</h3>
-        <p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
+        <h3 class="font-['David_Libre',Helvetica] text-[32px] font-bold leading-[29px]">TATÚATE</h3>
+        <p class="mt-4 font-['Inter',Helvetica] text-base leading-[29px] text-justify">
           Una vez que agendes tu cita, tatúate y disfruta de tu nuevo tatuaje.
         </p>
       </li>

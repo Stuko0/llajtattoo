@@ -3,21 +3,22 @@ import Layout from "../layouts/Layout.astro";
 import StyleAccordion from "../components/StyleAccordion.tsx";
 ---
 <Layout title="Estilos" currentPage="estilos">
-  <section class="bg-black text-white text-center py-16 md:py-20">
-    <div class="wrap">
-      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white">ESTILOS</h1>
-      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)]">Encuentra el estilo que se adapte a ti</p>
+  <section class="bg-black text-white text-center py-16 md:py-20 relative overflow-hidden">
+    <img class="pointer-events-none absolute right-0 top-0 h-full w-auto opacity-10 object-cover" src="/images/assets/dragon-in-black.png" alt="">
+    <div class="wrap relative">
+      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white" style="animation:fUp 0.6s ease forwards">ESTILOS</h1>
+      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)]" style="animation:fUp 0.6s ease forwards 0.1s;opacity:0">Encuentra el estilo que se adapte a ti</p>
     </div>
   </section>
 
   <section class="bg-white py-12 md:py-20">
     <div class="wrap grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 items-start">
       <aside>
-        <h2 class="font-[var(--font-dl)] font-medium text-2xl md:text-3xl mb-6 text-black">Categorías</h2>
+        <h2 class="font-[var(--font-dl)] font-bold text-3xl mb-6 text-black">Categorías</h2>
         <StyleAccordion client:load />
       </aside>
 
-      <div class="p-8 md:p-10 bg-[var(--cgl)] rounded-2xl shadow-sm border border-gray-100">
+      <div class="p-8 md:p-10 bg-[var(--cgl)] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.08)] border border-gray-100">
         <h2 class="font-[var(--font-dl)] font-bold text-4xl mb-5 text-black">Encuentra tu estilo</h2>
         <p class="font-[var(--font-int)] text-base text-[var(--cm)] leading-relaxed mb-8">
           Explora los diferentes estilos de tatuaje. Cada estilo tiene
@@ -26,7 +27,7 @@ import StyleAccordion from "../components/StyleAccordion.tsx";
           ejemplos y los artistas que lo dominan.
         </p>
         <div class="flex justify-center">
-          <img src="/images/assets/spider-hero.png" alt="Estilo de tatuaje" class="w-full max-w-[320px] h-auto object-cover rounded-xl" />
+          <img src="/images/assets/spider-hero.png" alt="Estilo de tatuaje" class="w-full max-w-[320px] h-auto object-cover rounded-xl hover:scale-105 transition-transform duration-500" />
         </div>
       </div>
     </div>

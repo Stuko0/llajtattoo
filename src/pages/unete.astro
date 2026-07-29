@@ -14,10 +14,11 @@ const cards = [
 ];
 ---
 <Layout title="Únete" currentPage="unete">
-  <section class="bg-black text-white text-center py-16 md:py-20">
-    <div class="wrap">
-      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white">ÚNETE</h1>
-      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)] max-w-2xl mx-auto">Forma parte de la comunidad más grande de Cochabamba</p>
+  <section class="bg-black text-white text-center py-16 md:py-20 relative overflow-hidden">
+    <img class="pointer-events-none absolute left-0 top-0 h-full w-auto opacity-10 object-cover" src="/images/assets/dragon-in-black.png" alt="">
+    <div class="wrap relative">
+      <h1 class="font-[var(--font-dl)] font-bold text-5xl md:text-6xl lg:text-[70px] leading-none mb-4 text-white" style="animation:fUp 0.6s ease forwards">ÚNETE</h1>
+      <p class="font-[var(--font-int)] text-[20px] font-normal text-[var(--color-cg)] max-w-2xl mx-auto" style="animation:fUp 0.6s ease forwards 0.1s;opacity:0">Forma parte de la comunidad más grande de Cochabamba</p>
     </div>
   </section>
 
@@ -25,12 +26,12 @@ const cards = [
     <div class="wrap grid grid-cols-1 md:grid-cols-2 gap-8">
       {cards.map((c, i) => (
         <article
-          class="bg-[var(--cgl)] p-10 md:p-14 card-hover rounded-2xl fu border border-gray-100"
-          style={`animation-delay: ${i * 120}ms;`}
+          class="bg-[var(--cgl)] p-10 md:p-14 card-hover rounded-2xl border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300"
+          style={`animation-delay: ${i * 120}ms; animation: fUp 0.6s ease forwards ${i * 0.12}s;`}
         >
           <h2 class="font-[var(--font-dl)] font-bold text-[32px] md:text-4xl mb-5 text-black">{c.t}</h2>
           <p class="font-[var(--font-int)] text-base text-[var(--cm)] mb-8 leading-relaxed">{c.d}</p>
-          <a href="#" class="inline-block bg-[var(--cd)] text-white px-7 py-3 text-sm font-semibold uppercase tracking-wide hover:-translate-y-0.5 hover:opacity-90 transition-all rounded">{c.btn}</a>
+          <a href="#" class="inline-block bg-[var(--cd)] text-white px-8 py-3.5 text-sm font-semibold uppercase tracking-wide hover:-translate-y-0.5 hover:opacity-90 transition-all rounded-lg shadow-md hover:shadow-lg">{c.btn}</a>
         </article>
       ))}
     </div>
