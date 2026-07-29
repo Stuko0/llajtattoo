@@ -71,11 +71,20 @@
 
 ## PÁGINAS ADICIONALES ✅
 
-### artistas.astro
-- Hero section con grid, mismas dimensiones que homepage
-- Grid de 5 artistas con fotos circulares
-- Sección destacada "Pistacho Tattoo" con descripción
-- Noticias/Blog section
+### artistas.astro ✅
+- Glass-morphism Hero con grid 2x2 (imagen row-span-2, título align-right)
+- Grid de 5 artistas con POSICIONAMIENTO ABSOLUTO exacto del Figma:
+  - Fabian Morales (left:0, top:2)
+  - Ignacio Orihuela (left:236px, top:0)
+  - Juan Maria Savedra (left:456px, top:0)
+  - Juan Caballero (left:705px, top:110px) — **STAGGERED** más abajo
+  - Natalia Lazzo (left:916px, top:0)
+- Botones "Ver Perfil" con SVG inline #101a24
+- Sección destacada "Pistacho Tattoo" con CSS Grid rows [1fr_2fr], imagen 444x445px
+- Sección Blog dividida:
+  - Left: "Artista destacado" (Don Juan) con foto y descripción
+  - Right: "Noticias" con 4 imágenes superpuestas (efecto Figma)
+- Imágenes decorativas de fondo: dragon-in-black, flowers-in-black, tattoo-background, branch, flower
 
 ### estilos.astro
 - Hero negro con textura decorativa
