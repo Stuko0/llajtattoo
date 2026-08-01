@@ -1,345 +1,299 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 import NewsPills from "../components/NewsPills.tsx";
 import StarRating from "../components/StarRating.tsx";
 ---
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Comunidad de tatuadores de Cochabamba, Bolivia. Encuentra artistas, estilos y agenda tu próxima cita.">
-<title>Llajtattoo | Comunidad de tatuadores</title>
-<link rel="stylesheet" href="/globals.css">
-<link rel="stylesheet" href="/styleguide.css">
-<script is:inline src="https://cdn.tailwindcss.com"></script>
-<script is:inline>
-tailwind.config = {
-      corePlugins: {
-        preflight: false
-      },
-      theme: {
-        extend: {
-          boxShadow: {
-            "m3-elevation-light-5": "var(--m3-elevation-light-5)"
-          }
-        }
-      },
-      plugins: []
-    };
-  </script>
-</head>
-<body class="m-0 bg-white text-black">
-<Navbar currentPage="inicio" />
-<main>
-<section id="inicio" class="mx-auto w-full max-w-[1150px] px-4 pb-8 pt-2 sm:px-6 lg:px-0 lg:pb-16 lg:pt-12" aria-labelledby="welcome-title">
-<div class="grid overflow-hidden border-b border-black/30 bg-white shadow-[0px_4px_4px_#00000040] lg:grid-cols-[1fr_410px]">
-<div class="flex min-h-[220px] flex-col justify-center px-5 py-8 sm:px-10 lg:min-h-[500px] lg:px-16">
-<h1 id="welcome-title" class="max-w-[620px] font-['David_Libre',Helvetica] text-2xl font-bold leading-[1.03] sm:text-4xl lg:text-[70px] lg:leading-[72px]">
-Bienvenido a nuestra comunidad
-          </h1>
-<p class="mt-4 max-w-[618px] font-['Inter',Helvetica] text-[10px] font-normal leading-4 text-[#000000b2] sm:text-sm sm:leading-6 lg:mt-8 lg:text-xl lg:leading-[29px]">
-Esta página está hecha para ti. Descubre la gran comunidad de tatuadores de Cochabamba, encuentra el estilo que buscas, conecta con tu artista favorito y agenda tu cita. ¡Tu próximo tatuaje comienza aquí!
-          </p>
-</div>
-<img
-          class="hidden h-full min-h-[500px] w-full object-cover lg:block"
-          src="/images/hero.png"
+
+<Layout title="Inicio" currentPage="inicio">
+  <!-- Hero Section -->
+  <section id="inicio" class="mx-auto w-full max-w-[1308px] px-4 pb-8 pt-2 sm:px-6 lg:px-8 lg:pb-16 lg:pt-6" aria-labelledby="welcome-title">
+    <div class="grid overflow-hidden rounded-[30px] border border-black/10 bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] lg:grid-cols-[1fr_450px]">
+      <div class="flex min-h-[220px] flex-col justify-center px-6 py-10 sm:px-12 lg:min-h-[480px] lg:px-16">
+        <h1 id="welcome-title" class="max-w-[620px] font-['David_Libre',Helvetica] text-3xl font-bold leading-tight sm:text-5xl lg:text-[68px] lg:leading-[72px] text-black">
+          Bienvenido a nuestra comunidad
+        </h1>
+        <p class="mt-6 max-w-[618px] font-['Inter',Helvetica] text-sm leading-relaxed text-[#5c6674] sm:text-base sm:leading-[28px] lg:text-lg">
+          Esta página está hecha para ti. Descubre la gran comunidad de tatuadores de Cochabamba, encuentra el estilo que buscas, conecta con tu artista favorito y agenda tu cita. ¡Tu próximo tatuaje comienza aquí!
+        </p>
+      </div>
+      <div class="flex items-center justify-center p-6 bg-[#fafafa]">
+        <img
+          class="h-auto w-full max-w-[380px] object-contain"
+          src="/images/assets/spider-hero.png"
           alt="Diseño artístico de tatuaje"
         >
-<img
-          class="block h-28 w-full object-cover object-center lg:hidden"
-          src="/images/hero.png"
-          alt=""
-        >
-</div>
-</section>
+      </div>
+    </div>
+  </section>
 
-<section id="artistas" class="relative mx-auto w-full max-w-[1150px] px-4 py-8 text-center sm:px-6 lg:px-0 lg:py-16" aria-labelledby="artists-title">
-<img
-        class="pointer-events-none absolute right-0 top-0 hidden w-36 object-contain opacity-50 lg:block"
-        src="/images/assets/flower.png"
-        alt=""
-      >
-<h2 id="artists-title" class="font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
-Artistas del mes
-      </h2>
-<p class="mx-auto mt-3 max-w-[410px] font-['Inter',Helvetica] text-[10px] font-normal leading-4 sm:text-sm sm:leading-6 lg:mt-6 lg:text-base lg:leading-[29px]">
-Los artistas más destacados del mes por su participación en la convención de tatuajes en Oruro
-      </p>
-<div class="mx-auto mt-8 grid max-w-[900px] grid-cols-3 gap-3 sm:gap-10 lg:mt-12">
-<article class="flex flex-col items-center">
-<img
-            class="h-14 w-14 rounded-full object-cover sm:h-28 sm:w-28 lg:h-[191px] lg:w-[191px]"
-            src="/images/assets/Profe Tattoo.png"
-            alt="Fabian Morales, Profe Tattoo"
-          >
-<h3 class="mt-3 font-['David_Libre',Helvetica] text-[9px] font-bold leading-3 sm:text-sm lg:text-xl lg:leading-[29px]">
-Fabian Morales<br>PROFE TATTOO
-          </h3>
-<a href="#perfil-fabian" class="mt-2 rounded bg-black px-3 py-1 font-['David_Libre',Helvetica] text-[8px] font-medium text-white hover:bg-black/80 sm:text-xs">
-Ver Perfil
-          </a>
-</article>
-<article class="flex flex-col items-center">
-<img
-            class="h-14 w-14 rounded-full object-cover sm:h-28 sm:w-28 lg:h-[191px] lg:w-[191px]"
-            src="/images/assets/Don Juan Caballero.png"
-            alt="Juan Don Juan Caballero"
-          >
-<h3 class="mt-3 font-['David_Libre',Helvetica] text-[9px] font-bold leading-3 sm:text-sm lg:text-xl lg:leading-[29px]">
-Juan<br>Don Juan Caballero
-          </h3>
-<a href="#perfil-juan" class="mt-2 rounded bg-black px-3 py-1 font-['David_Libre',Helvetica] text-[8px] font-medium text-white hover:bg-black/80 sm:text-xs">
-Ver Perfil
-          </a>
-</article>      <article class="flex flex-col items-center lg:mt-8">
-<img
-            class="h-14 w-14 rounded-full object-cover sm:h-28 sm:w-28 lg:h-[191px] lg:w-[191px]"
-            src="/images/assets/Black Kitty.png"
-            alt="Natalia Lazzo, Blackitty"
-          >
-<h3 class="mt-3 font-['David_Libre',Helvetica] text-[9px] font-bold leading-3 sm:text-sm lg:text-xl lg:leading-[29px]">
-Natalia Lazzo<br>BLACKITTY
-          </h3>
-<a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="mt-2 rounded bg-black px-3 py-1 font-['David_Libre',Helvetica] text-[8px] font-medium text-white hover:bg-black/80 sm:text-xs transition-all hover:-translate-y-0.5">
-Ver Perfil
-          </a>
-</article>
-</div>
-</section>
-
-<section id="noticias" class="relative overflow-hidden bg-[#f3f3f3] px-4 py-9 text-center sm:px-6 lg:py-16" aria-labelledby="news-title">
-
-<img
-        class="pointer-events-none absolute left-0 top-0 hidden w-80 opacity-30 lg:block"
-        src="/images/assets/flower.png"
-        alt=""
-        >
-<img
-    class="pointer-events-none absolute right-0 top-2/3 hidden w-80 -translate-y-1/2 opacity-30 lg:block"
-    src="/images/assets/flower.png"
-    alt=""
+  <!-- Artistas del mes -->
+  <section id="artistas" class="relative mx-auto w-full max-w-[1308px] px-4 py-12 text-center sm:px-6 lg:px-8 lg:py-16" aria-labelledby="artists-title">
+    <img
+      class="pointer-events-none absolute right-0 top-0 hidden w-48 object-contain opacity-40 lg:block"
+      src="/images/assets/flower.png"
+      alt=""
     >
-<div class="relative mx-auto max-w-[1308px]">
-<h2 id="news-title" class="font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
-Noticias
-        </h2>
-<p class="mx-auto mt-3 max-w-[740px] font-['Inter',Helvetica] text-[10px] leading-4 sm:text-sm sm:leading-6 lg:mt-6 lg:text-2xl lg:leading-[29px]">
-Descubre las últimas tendencias del mundo del tatuaje y entérate de las noticias más importantes sobre eventos, convenciones y festivales de tattoo en Bolivia y alrededor del mundo.
-        </p>
-<NewsPills client:load />
-<a href="#blog" class="mx-auto mt-6 inline-flex min-w-72 justify-center rounded bg-[#07111a] px-32 py-3 font-['David_Libre',Helvetica] text-xl font-medium text-white shadow-[0px_4px_4px_#00000040] hover:bg-black transition-all hover:-translate-y-0.5">
-Ingresar
+    <h2 id="artists-title" class="font-['David_Libre',Helvetica] text-3xl font-bold leading-none sm:text-4xl lg:text-[68px]">
+      Artistas del mes
+    </h2>
+    <p class="mx-auto mt-4 max-w-[500px] font-['Inter',Helvetica] text-sm text-[#5c6674] sm:text-base">
+      Los artistas más destacados del mes por su participación en la convención de tatuajes en Oruro
+    </p>
+    <div class="mx-auto mt-12 grid max-w-[950px] grid-cols-1 gap-8 sm:grid-cols-3 items-start lg:mt-16">
+      <article class="flex flex-col items-center">
+        <img
+          class="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:h-[190px] lg:w-[190px] shadow-lg border-2 border-black/10"
+          src="/images/assets/Profe Tattoo.png"
+          alt="Fabian Morales, Profe Tattoo"
+        >
+        <h3 class="mt-4 font-['David_Libre',Helvetica] text-lg font-bold text-black sm:text-xl">
+          Fabian Morales<br><span class="text-xs font-bold text-[#5c6674] uppercase">PROFE TATTOO</span>
+        </h3>
+        <a href="/artistas" class="mt-3 rounded-full bg-[#101a24] px-6 py-2 font-['Inter',Helvetica] text-xs font-bold text-white hover:bg-black transition-colors shadow-md">
+          Ver Perfil
         </a>
-</div>
-</section>
+      </article>
 
-<section class="mx-auto grid w-full max-w-[1150px] gap-5 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-0 lg:py-20" aria-label="Opciones de la comunidad">
-<article class="flex min-h-[270px] flex-col rounded-[30px] bg-[#000000e6] px-6 py-7 text-center text-white shadow-[4px_4px_4px_4px_#00000040] sm:min-h-[400px] lg:rounded-[60px]">
-<h2 class="font-['David_Libre',Helvetica] text-xl font-bold leading-7 sm:text-2xl lg:text-[32px] lg:leading-[40px]">
-¿NO SABES QUÉ ESTILO ES EL TATUAJE QUE QUIERES REALIZARTE?
-        </h2>
-<div class="mt-4 flex flex-1 items-center gap-3 text-left">
-<img class="h-28 w-28 rounded-[70px] object-cover sm:h-40 sm:w-28" src="/images/assets/new4.png" alt="Ejemplo de tatuaje">
-<p class="font-['Inter',Helvetica] text-xs leading-5 sm:text-sm sm:leading-6">
-Ingresa a la pestaña de estilos y encuentra el estilo de tu tatuaje con las carecterísticas de cada estilo.
-          </p>
-</div>
-<a href="/estilos" class="mt-4 inline-flex justify-center self-center rounded-full bg-white px-6 py-3 font-['Inter',Helvetica] text-sm text-black hover:bg-[#dcdcdc]">
-IR A ESTILOS
+      <!-- Staggered center card -->
+      <article class="flex flex-col items-center lg:mt-12">
+        <img
+          class="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:h-[190px] lg:w-[190px] shadow-lg border-2 border-black/10"
+          src="/images/assets/Don Juan Caballero.png"
+          alt="Juan Don Juan Caballero"
+        >
+        <h3 class="mt-4 font-['David_Libre',Helvetica] text-lg font-bold text-black sm:text-xl">
+          Juan<br><span class="text-xs font-bold text-[#5c6674] uppercase">Don Juan Caballero</span>
+        </h3>
+        <a href="/artistas" class="mt-3 rounded-full bg-[#101a24] px-6 py-2 font-['Inter',Helvetica] text-xs font-bold text-white hover:bg-black transition-colors shadow-md">
+          Ver Perfil
         </a>
-</article>
-<article id="unete" class="flex min-h-[270px] flex-col rounded-[30px] bg-[#000000e6] px-6 py-7 text-center text-white shadow-[4px_4px_4px_4px_#00000040] sm:min-h-[400px] lg:rounded-[60px]">
-<h2 class="font-['David_Libre',Helvetica] text-2xl font-bold leading-[72px] sm:text-[32px]">
-Eres artista ?
-        </h2>
-<p class="mx-auto mt-6 max-w-[240px] flex-1 font-['Inter',Helvetica] text-sm leading-6 sm:text-base sm:leading-[29px]">
-Únete a nuestra comunidad de artistas, conecta con nuevos clientes y disfruta de todos los beneficios que ofrece nuestra plataforma.
-        </p>
-<a href="#aplicar" class="mt-5 inline-flex justify-center self-center rounded-full bg-white px-6 py-3 font-['David_Libre',Helvetica] text-sm font-medium text-black hover:bg-[#dcdcdc]">
-APLICAR AHORA
-        </a>
-</article>
-<article class="flex min-h-[270px] flex-col rounded-[30px] bg-[#000000e6] px-6 py-7 text-center text-white shadow-[4px_4px_4px_4px_#00000040] sm:min-h-[400px] lg:rounded-[60px]">
-<h2 class="font-['David_Libre',Helvetica] text-xl font-bold leading-7 sm:text-2xl lg:text-[32px] lg:leading-[39px]">
-¡ESTE TATUADOR ESTÁ DE PROMOCIÓN ESTE MES!
-        </h2>
-<p class="mx-auto mt-4 max-w-[280px] font-['David_Libre',Helvetica] text-sm font-bold leading-6 sm:text-base sm:leading-[30px]">
-ingresa a su perfil para ver su trabajo y conocer más sobre ella
-        </p>
-<img class="mx-auto mt-4 h-24 w-24 rounded-full object-cover sm:h-36 sm:w-36" src="/images/assets/Black Kitty.png" alt="Tatuadora en promoción">
-<a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex justify-center self-center rounded-full bg-[#f629b5] px-6 py-3 font-['Inter',Helvetica] text-xl text-white hover:bg-[#df159f] sm:text-2xl">
-2 X 1 FINELINE
-        </a>
-</article>
-</section>
+      </article>
 
-<section id="estilos" class="mx-auto w-full max-w-[1150px] px-4 py-8 sm:px-6 lg:px-0 lg:py-16" aria-labelledby="styles-title">
-<h2 id="styles-title" class="text-center font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
-Explorar por estilos
+      <article class="flex flex-col items-center">
+        <img
+          class="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:h-[190px] lg:w-[190px] shadow-lg border-2 border-black/10"
+          src="/images/assets/Black Kitty.png"
+          alt="Natalia Lazzo, Blackitty"
+        >
+        <h3 class="mt-4 font-['David_Libre',Helvetica] text-lg font-bold text-black sm:text-xl">
+          Natalia Lazzo<br><span class="text-xs font-bold text-[#5c6674] uppercase">BLACKITTY</span>
+        </h3>
+        <a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="mt-3 rounded-full bg-[#101a24] px-6 py-2 font-['Inter',Helvetica] text-xs font-bold text-white hover:bg-black transition-colors shadow-md">
+          Ver Perfil
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Noticias Section -->
+  <section id="noticias" class="relative overflow-hidden bg-[#e9e9e9] px-4 py-12 text-center sm:px-6 lg:py-20" aria-labelledby="news-title">
+    <img
+      class="pointer-events-none absolute left-0 top-0 hidden w-72 opacity-30 lg:block"
+      src="/images/assets/flower.png"
+      alt=""
+    >
+    <img
+      class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 hidden w-72 opacity-30 lg:block"
+      src="/images/assets/flower.png"
+      alt=""
+    >
+    <div class="relative mx-auto max-w-[1308px] px-4 sm:px-6 lg:px-8">
+      <h2 id="news-title" class="font-['David_Libre',Helvetica] text-3xl font-bold sm:text-4xl lg:text-[68px]">
+        Noticias
       </h2>
-<div class="mx-auto mt-8 grid max-w-[965px] grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-12 lg:gap-10">
-<article class="overflow-hidden rounded-[30px] bg-[#000000e8] p-0 text-center text-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-<img class="mx-auto h-28 w-28 object-cover sm:h-40 sm:w-40 lg:h-[210px] lg:w-[210px]" src="/images/assets/traditional-home.png" alt="Tatuaje tradicional">
-<div class="p-3 pb-0">
-<h3 class="mt-1 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
-<p class="mt-0 font-['Inter',Helvetica] text-base">tradicional</p>
-</div>
-<a href="#tradicional" class="flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-base font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
-</article>
-<article class="overflow-hidden rounded-[30px] bg-[#000000e8] p-0 text-center text-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-<img class="mx-auto h-28 w-28 object-cover sm:h-40 sm:w-40 lg:h-[201px] lg:w-[201px]" src="/images/assets/fine-line-home.png" alt="Tatuaje fine line">
-<div class="p-3 pb-0">
-<h3 class="mt-1 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
-<p class="mt-0 font-['Inter',Helvetica] text-base">Fine line</p>
-</div>
-<a href="#fineline" class="flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-base font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
-</article>
-<article class="overflow-hidden rounded-[30px] bg-[#000000e8] p-0 text-center text-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-<img class="mx-auto h-28 w-28 object-cover sm:h-40 sm:w-40 lg:h-[208px] lg:w-[208px]" src="/images/assets/neo-traditional-home.png" alt="Tatuaje neotradicional">
-<h3 class="mt-3 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
-<p class="mt-0 font-['Inter',Helvetica] text-base">Neotradicional</p>
-<a href="#neotradicional" class="flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-base font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
-</article>
-<article class="overflow-hidden rounded-[30px] bg-[#000000e8] p-0 text-center text-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-<img class="mx-auto h-28 w-28 object-cover sm:h-40 sm:w-40 lg:h-[201px] lg:w-[202px]" src="/images/assets/blackwork.png" alt="Tatuaje blackwork">
-<div class="p-3 pb-0">
-<h3 class="mt-1 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
-<p class="mt-0 font-['Inter',Helvetica] text-base">Blackwork</p>
-</div>
-<a href="#blackwork" class="flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-base font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
-</article>
-<article class="overflow-hidden rounded-[30px] bg-[#000000e8] p-0 text-center text-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-<img class="mx-auto h-28 w-28 object-cover sm:h-40 sm:w-40 lg:h-[220px] lg:w-[220px]" src="/images/assets/realism1-home.png" alt="Tatuaje realista">
-<div class="p-3 pb-0">
-<h3 class="mt-1 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
-<p class="mt-0 font-['Inter',Helvetica] text-base">Realismo</p>
-</div>
-<a href="#realismo" class="flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-base font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
-</article>
-<article class="overflow-hidden rounded-[30px] bg-[#000000e8] p-0 text-center text-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-<img class="mx-auto h-28 w-28 object-cover sm:h-40 sm:w-40 lg:h-[197px] lg:w-[197px]" src="/images/assets/realism2-home.png" alt="Tatuaje realista">
-<div class="p-3 pb-0">
-<h3 class="mt-1 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
-<p class="mt-0 font-['Inter',Helvetica] text-base">Realismo</p>
-</div>
-<a href="#realismo" class="flex h-8 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-base font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
-</article>
-</div>
-</section>
+      <p class="mx-auto mt-4 max-w-[700px] font-['Inter',Helvetica] text-sm text-[#5c6674] sm:text-base lg:text-lg">
+        Descubre las últimas tendencias del mundo del tatuaje y entérate de las noticias más importantes sobre eventos, convenciones y festivales de tattoo en Bolivia y alrededor del mundo.
+      </p>
+      <div class="my-8">
+        <NewsPills client:load />
+      </div>
+      <a href="/blog" class="inline-block rounded-full bg-[#07111a] px-12 py-3.5 font-['David_Libre',Helvetica] text-lg font-bold text-white shadow-lg hover:bg-black transition-all hover:scale-105">
+        Ingresar
+      </a>
+    </div>
+  </section>
 
-<section class="relative overflow-hidden bg-black px-4 py-10 text-white sm:px-6 lg:py-20" aria-labelledby="steps-title">
-<img class="pointer-events-none absolute bottom-0 left-0 hidden h-full w-auto opacity-20 lg:block" src="/images/assets/flower.png" alt="">
-<div class="relative mx-auto max-w-[1150px]">
-<h2 id="steps-title" class="text-center font-['David_Libre',Helvetica] text-2xl font-bold leading-none sm:text-3xl lg:text-[70px] lg:leading-[72px]">
-Tu próximo tatuaje en 3 pasos
+  <!-- CTA 3 Cards Section -->
+  <section class="mx-auto grid w-full max-w-[1308px] gap-6 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8 lg:py-20" aria-label="Opciones de la comunidad">
+    <!-- Card 1 -->
+    <article class="flex min-h-[380px] flex-col justify-between rounded-[30px] bg-black px-7 py-8 text-center text-white shadow-xl">
+      <div>
+        <h2 class="font-['David_Libre',Helvetica] text-xl font-bold leading-tight sm:text-2xl lg:text-[26px]">
+          ¿NO SABES QUÉ ESTILO ES EL TATUAJE QUE QUIERES REALIZARTE?
         </h2>
-<p class="mt-3 text-center font-['Inter',Helvetica] text-xs text-[#ffffffb2] sm:text-sm lg:mt-6 lg:text-xl">
-Sigue estos tres pasos para realizarte un tatuaje
+        <div class="mt-6 flex items-center gap-4 text-left">
+          <img class="h-24 w-24 rounded-full object-cover shrink-0 border border-white/20" src="/images/assets/new4.png" alt="Tatuaje estilo">
+          <p class="font-['Inter',Helvetica] text-xs leading-relaxed text-white/80 sm:text-sm">
+            Ingresa a la pestaña de estilos y encuentra el estilo de tu tatuaje con las características de cada estilo.
+          </p>
+        </div>
+      </div>
+      <a href="/estilos" class="mt-8 inline-block rounded-full bg-white px-8 py-3.5 font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-[#dcdcdc] transition-all">
+        IR A ESTILOS
+      </a>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="flex min-h-[380px] flex-col justify-between rounded-[30px] bg-black px-7 py-8 text-center text-white shadow-xl">
+      <div>
+        <h2 class="font-['David_Libre',Helvetica] text-2xl font-bold leading-tight sm:text-3xl lg:text-[32px]">
+          Eres artista ?
+        </h2>
+        <p class="mt-6 font-['Inter',Helvetica] text-sm leading-relaxed text-white/80 sm:text-base">
+          Únete a nuestra comunidad de artistas, conecta con nuevos clientes y disfruta de todos los beneficios que ofrece nuestra plataforma.
         </p>
-<ol class="mt-8 grid gap-5 md:grid-cols-3 lg:mt-32">
-<li class="relative rounded-tl-[90px] rounded-br-[90px] rounded-tr-[30px] rounded-bl-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
-<span class="absolute -top-20 left-1/2 flex h-28 w-28 -translate-x-1/2 items-center justify-center rounded-full bg-white">
-    <svg width="96" height="96" viewBox="0 0 96 96"
-    fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M44 16C59.464 16 72 28.536 72 44C72 59.464
-    59.464 72 44 72C28.536 72 16 59.464 16 44C16 28.536
-    28.536 16 44 16ZM44 27C41.7675 27 39.5567 27.4396
-    37.4941 28.2939C35.4317 29.1483 33.558 30.4009 31.9795
-    31.9795C30.4009 33.558 29.1483 35.4317 28.2939
-    37.4941C27.4396 39.5567 27 41.7675 27 44C27 44.5523
-    27.4477 45 28 45C28.5523 45 29 44.5523 29 44C29 42.0302
-    29.3878 40.0796 30.1416 38.2598C30.8954 36.4399 32.0007
-    34.7864 33.3936 33.3936C34.7864 32.0007 36.4399 30.8954
-    38.2598 30.1416C40.0796 29.3878 42.0302 29 44 29C44.5523
-    29 45 28.5523 45 28C45 27.4477 44.5523 27 44 27Z"
-    fill="#222222"/>
-    <path d="M80 80L72 72" stroke="#222222" stroke-width="2"
-    stroke-linecap="round"/>
-    </svg>
-</span>
-<h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">EXPLORA</h3>
-<p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
-Explora la página para descubrir promociones, artistas y las últimas noticias del mundo del tatuaje. Si ya tienes un estilo en mente, elige a tu tatuador de acuerdo con su especialidad y conecta con el artista que mejor se adapte a tus gustos.
-            </p>
-</li>
-<li class="relative rounded-tl-[90px] rounded-br-[90px] rounded-tr-[30px] rounded-bl-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
-<span class="absolute -top-20 left-1/2 flex h-28 w-28 -translate-x-1/2 items-center justify-center rounded-full bg-white">
-    <svg width="104" height="104" viewBox="0 0 104 104"
-    fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M69.3333 13L69.3332 26M34.6666 13L34.6666 26"
-    stroke="#222222" stroke-width="2" stroke
-    linecap="round"/>
-    <path d="M67.333 17.3369V26C67.333 27.1045 68.2286
-    27.9998 69.333 28C70.4376 28 71.333 27.1046 71.333
-    26V17.3594C79.4954 17.4702 84.1062 18.0546 87.1924
-    21.1406C91 24.9482 91 31.0767 91 43.333V65C91 77.2565 91
-    83.3848 87.1924 87.1924C83.3848 91 77.2565 91 65
-    91H39C26.7435 91 20.6152 91 16.8076 87.1924C13 83.3848
-    13 77.2565 13 65V43.333C13 31.0767 13 24.9482 16.8076
-    21.1406C19.8936 18.0548 24.5042 17.4702 32.666
-    17.3594V26C32.666 27.1043 33.5617 27.9996 34.666
-    28C35.7706 28 36.666 27.1046 36.666 26V17.3369C37.4184
-    17.3358 38.196 17.333 39 17.333H65C65.8037 17.333 66.581
-    17.3358 67.333 17.3369ZM34.667 68.333C34.1148 68.333
-    33.6672 68.7809 33.667 69.333C33.667 69.8853 34.1147
-    70.333 34.667 70.333H69.334C69.886 70.3327 70.334
-    69.8851 70.334 69.333C70.3338 68.7811 69.8859 68.3334
-    69.334 68.333H34.667ZM34.667 51C34.1147 51 33.667
-    51.4477 33.667 52C33.667 52.5523 34.1147 53 34.667
-    53H69.334C69.886 52.9996 70.334 52.5521 70.334 52C70.334
-    51.4479 69.886 51.0004 69.334 51H34.667Z"
-    fill="#222222"/>
-    </svg>
-</span>
-<h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">AGENDA</h3>
-<p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
-Si ya escogiste a tu tatuador, puedes ingresar a sus redes sociales para interactuar con él, enviarle un mensaje y agendar una cita.
-            </p>
-</li>
-<li class="relative rounded-tl-[90px] rounded-br-[90px] rounded-tr-[30px] rounded-bl-[30px] bg-white px-5 pb-5 pt-12 text-center text-black">
-<span class="absolute -top-20 left-1/2 flex h-28 w-28 -translate-x-1/2 items-center justify-center rounded-full bg-white">
-    <svg width="85" height="85" viewBox="0 0 85 85"
-    fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M43.3762 27.4565C46.939 33.1886 51.812 38.0275
-    57.6135 41.5522L29.1897 69.9771C28.7647 70.402 28.5523
-    70.6147 28.2913 70.7544C28.0302 70.8941 27.7352 70.9529
-    27.1458 71.0708L11.3606 74.228C11.028 74.2946 10.8615
-    74.3275 10.7668 74.2329C10.6726 74.1383 10.7053 73.9722
-    10.7717 73.6401L13.929 57.854C14.0467 57.2651 14.1058
-    56.9704 14.2454 56.7095C14.3851 56.4484 14.5976 56.2351
-    15.0227 55.8101L43.3762 27.4565ZM60.2083 11.4536C61.0366
-    11.4536 61.7032 12.1204 63.0364 13.4536L71.5461
-    21.9634C72.8793 23.2965 73.546 23.9632 73.5461
-    24.7915C73.5461 25.6199 72.8795 26.2873 71.5461
-    27.6206L59.0715 40.0942C53.2192 36.6333 48.3309 31.7819
-    44.8293 26.0024L57.3801 13.4536C58.7133 12.1204 59.3799
-    11.4537 60.2083 11.4536Z" fill="#222222"/>
-    <line x1="3.64645" y1="80.6464" x2="13.6464"
-    y2="70.6464" stroke="black"/>
-    </svg>
-</span>
-<h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">TATÚATE</h3>
-<p class="mt-3 font-['Inter',Helvetica] text-sm leading-6">
-Una vez que agendes tu cita, tatúate y disfruta de tu nuevo tatuaje.
-</p>
-</li>
-</ol>
-</div>
-</section>
-<!-- cacao.png: decoración que cruza de blanco a negro -->
-<div class="relative" style="height:0;overflow:visible;z-index:5;">
-<img
-class="absolute opacity-10 -top-64 left-0 w-48 h-auto object-contain lg:w-64 pointer-events-none"
-src="/images/assets/cacao.png"
-alt=""
-style="transform:translateY(-50%);"
->
-</div>
-<StarRating client:load />
-</main>
-<Footer />
-</body>
-</html>
+      </div>
+      <a href="/unete" class="mt-8 inline-block rounded-full bg-white px-8 py-3.5 font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-[#dcdcdc] transition-all">
+        APLICAR AHORA
+      </a>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="flex min-h-[380px] flex-col justify-between rounded-[30px] bg-black px-7 py-8 text-center text-white shadow-xl">
+      <div>
+        <h2 class="font-['David_Libre',Helvetica] text-xl font-bold leading-tight sm:text-2xl lg:text-[24px]">
+          ¡ESTE TATUADOR ESTÁ DE PROMOCIÓN ESTE MES!
+        </h2>
+        <p class="mt-3 font-['Inter',Helvetica] text-xs text-white/75 sm:text-sm">
+          ingresa a su perfil para ver su trabajo y conocer más sobre ella
+        </p>
+        <div class="mt-4 flex justify-center">
+          <img class="h-24 w-24 rounded-full object-cover border-2 border-white/20 shadow-md" src="/images/assets/Black Kitty.png" alt="Black Kitty">
+        </div>
+      </div>
+      <a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block rounded-full bg-[#f62b8d] px-8 py-3.5 font-['Inter',Helvetica] text-base font-bold text-white hover:bg-[#df159f] transition-all shadow-md">
+        2 X 1 FINELINE
+      </a>
+    </article>
+  </section>
+
+  <!-- Explorar por estilos Grid -->
+  <section id="estilos" class="mx-auto w-full max-w-[1308px] px-4 py-8 sm:px-6 lg:px-8 lg:py-16" aria-labelledby="styles-title">
+    <h2 id="styles-title" class="text-center font-['David_Libre',Helvetica] text-3xl font-bold sm:text-4xl lg:text-[68px]">
+      Explorar por estilos
+    </h2>
+    <div class="mx-auto mt-12 grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      <!-- Style Card 1 -->
+      <article class="overflow-hidden rounded-[30px] bg-black text-center text-white shadow-lg flex flex-col justify-between hover:scale-[1.02] transition-transform">
+        <div class="p-6 pb-4">
+          <img class="mx-auto h-44 w-44 object-cover rounded-2xl" src="/images/assets/traditional-home.png" alt="Tatuaje tradicional">
+          <h3 class="mt-4 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
+          <p class="font-['Inter',Helvetica] text-base text-white/80">tradicional</p>
+        </div>
+        <a href="/estilos" class="flex h-12 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
+      </article>
+
+      <!-- Style Card 2 -->
+      <article class="overflow-hidden rounded-[30px] bg-black text-center text-white shadow-lg flex flex-col justify-between hover:scale-[1.02] transition-transform">
+        <div class="p-6 pb-4">
+          <img class="mx-auto h-44 w-44 object-cover rounded-2xl" src="/images/assets/fine-line-home.png" alt="Tatuaje fine line">
+          <h3 class="mt-4 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
+          <p class="font-['Inter',Helvetica] text-base text-white/80">Fine line</p>
+        </div>
+        <a href="/estilos" class="flex h-12 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
+      </article>
+
+      <!-- Style Card 3 -->
+      <article class="overflow-hidden rounded-[30px] bg-black text-center text-white shadow-lg flex flex-col justify-between hover:scale-[1.02] transition-transform">
+        <div class="p-6 pb-4">
+          <img class="mx-auto h-44 w-44 object-cover rounded-2xl" src="/images/assets/neo-traditional-home.png" alt="Tatuaje neotradicional">
+          <h3 class="mt-4 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
+          <p class="font-['Inter',Helvetica] text-base text-white/80">Neotradicional</p>
+        </div>
+        <a href="/estilos" class="flex h-12 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
+      </article>
+
+      <!-- Style Card 4 -->
+      <article class="overflow-hidden rounded-[30px] bg-black text-center text-white shadow-lg flex flex-col justify-between hover:scale-[1.02] transition-transform">
+        <div class="p-6 pb-4">
+          <img class="mx-auto h-44 w-44 object-cover rounded-2xl" src="/images/assets/blackwork.png" alt="Tatuaje blackwork">
+          <h3 class="mt-4 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
+          <p class="font-['Inter',Helvetica] text-base text-white/80">Blackwork</p>
+        </div>
+        <a href="/estilos" class="flex h-12 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
+      </article>
+
+      <!-- Style Card 5 -->
+      <article class="overflow-hidden rounded-[30px] bg-black text-center text-white shadow-lg flex flex-col justify-between hover:scale-[1.02] transition-transform">
+        <div class="p-6 pb-4">
+          <img class="mx-auto h-44 w-44 object-cover rounded-2xl" src="/images/assets/realism1-home.png" alt="Tatuaje realista">
+          <h3 class="mt-4 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
+          <p class="font-['Inter',Helvetica] text-base text-white/80">Realismo</p>
+        </div>
+        <a href="/estilos" class="flex h-12 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
+      </article>
+
+      <!-- Style Card 6 -->
+      <article class="overflow-hidden rounded-[30px] bg-black text-center text-white shadow-lg flex flex-col justify-between hover:scale-[1.02] transition-transform">
+        <div class="p-6 pb-4">
+          <img class="mx-auto h-44 w-44 object-cover rounded-2xl" src="/images/assets/realism2-home.png" alt="Tatuaje realista">
+          <h3 class="mt-4 font-['Inter',Helvetica] text-2xl font-bold">Estilo</h3>
+          <p class="font-['Inter',Helvetica] text-base text-white/80">Realismo</p>
+        </div>
+        <a href="/estilos" class="flex h-12 items-center justify-center bg-[#dcdcdc] font-['Inter',Helvetica] text-sm font-bold text-black hover:bg-white transition-colors">INGRESAR</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3 Pasos Section -->
+  <section class="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:py-24" aria-labelledby="steps-title">
+    <!-- Flower watermark left -->
+    <img class="pointer-events-none absolute bottom-0 left-0 hidden w-80 opacity-20 lg:block" src="/images/assets/flower.png" alt="">
+
+    <div class="relative mx-auto max-w-[1308px] px-4 sm:px-6 lg:px-8">
+      <h2 id="steps-title" class="text-center font-['David_Libre',Helvetica] text-3xl font-bold sm:text-4xl lg:text-[68px]">
+        Tu próximo tatuaje en <span class="font-bold text-white">3 pasos</span>
+      </h2>
+      <p class="mt-4 text-center font-['Inter',Helvetica] text-sm text-white/80 sm:text-base lg:text-lg">
+        Sigue estos tres pasos para realizarte un tatuaje
+      </p>
+
+      <ol class="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3 items-start lg:mt-24">
+        <!-- Step 1 -->
+        <li class="relative rounded-[40px] bg-white p-8 pt-16 text-center text-black shadow-2xl">
+          <span class="absolute -top-12 left-1/2 flex h-24 w-24 -translate-x-1/2 items-center justify-center rounded-full bg-white shadow-lg border-4 border-black">
+            <svg class="h-10 w-10 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+          </span>
+          <h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">EXPLORA</h3>
+          <p class="mt-4 font-['Inter',Helvetica] text-sm leading-relaxed text-[#5c6674]">
+            Explora la página para descubrir promociones, artistas y las últimas noticias del mundo del tatuaje. Si ya tienes un estilo en mente, elige a tu tatuador de acuerdo con su especialidad y conecta con el artista que mejor se adapte a tus gustos.
+          </p>
+        </li>
+
+        <!-- Step 2 (Staggered lower) -->
+        <li class="relative rounded-[40px] bg-white p-8 pt-16 text-center text-black shadow-2xl lg:mt-16">
+          <span class="absolute -top-12 left-1/2 flex h-24 w-24 -translate-x-1/2 items-center justify-center rounded-full bg-white shadow-lg border-4 border-black">
+            <svg class="h-10 w-10 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </span>
+          <h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">AGENDA</h3>
+          <p class="mt-4 font-['Inter',Helvetica] text-sm leading-relaxed text-[#5c6674]">
+            Si ya escogiste a tu tatuador, puedes ingresar a sus redes sociales para interactuar con él, enviarle un mensaje y agendar una cita.
+          </p>
+        </li>
+
+        <!-- Step 3 -->
+        <li class="relative rounded-[40px] bg-white p-8 pt-16 text-center text-black shadow-2xl">
+          <span class="absolute -top-12 left-1/2 flex h-24 w-24 -translate-x-1/2 items-center justify-center rounded-full bg-white shadow-lg border-4 border-black">
+            <svg class="h-10 w-10 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </span>
+          <h3 class="font-['David_Libre',Helvetica] text-2xl font-bold">TATÚATE</h3>
+          <p class="mt-4 font-['Inter',Helvetica] text-sm leading-relaxed text-[#5c6674]">
+            Una vez que agendes tu cita, tatúate y disfruta de tu nuevo tatuaje.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Rating Section -->
+  <StarRating client:load />
+</Layout>

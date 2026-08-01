@@ -1,0 +1,468 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "black-kitty" } },
+    { params: { slug: "natalia-lazzo" } },
+    { params: { slug: "don-juan" } },
+    { params: { slug: "juan-caballero" } },
+    { params: { slug: "juanma" } },
+    { params: { slug: "juan-maria-savedra" } },
+    { params: { slug: "pistacho-tattoo" } },
+    { params: { slug: "ignacio-orihuela" } },
+    { params: { slug: "profe-tattoo" } },
+    { params: { slug: "fabian-morales" } }
+  ];
+}
+
+const { slug } = Astro.params;
+
+const artistsData: Record<string, any> = {
+  "black-kitty": {
+    slug: "black-kitty",
+    name: "Natalia Lazzo",
+    alias: "BLACKITTY",
+    avatar: "/images/assets/Black Kitty.png",
+    themeColor: "#f62b8d",
+    bio: "Nati, conocida artísticamente como Blackitty, tiene 24 años y 2 años de experiencia en el mundo del tatuaje. Especializada en los estilos Blackwork y Fine Line, se caracteriza por crear diseños personalizados que combinan precisión, elegancia y significado. Actualmente dirige un estudio privado exclusivo para mujeres, un espacio seguro y acogedor donde continúa perfeccionando su técnica y transformando ideas en obras de arte sobre la piel.",
+    specialties: ["Blackwork", "Puntillismo", "Fine Line", "Tradicional"],
+    socials: {
+      tiktok: "https://tiktok.com/@blackitty",
+      whatsapp: "https://wa.me/59100000000",
+      instagram: "https://instagram.com/blackitty"
+    },
+    variant: "black-kitty"
+  },
+  "don-juan": {
+    slug: "don-juan",
+    name: "Juan Caballero",
+    alias: "DON JUAN CABALLERO",
+    avatar: "/images/assets/Don Juan Caballero.png",
+    themeColor: "#eab308",
+    bio: "Un artista con 8 años de trayectoria en el mundo del tatuaje, este artista se ha especializado en el estilo neotradicional, destacándose por su interés en la iconografía de las máscaras Hannya. Su trabajo se caracteriza por el uso de colores vibrantes, líneas sólidas y composiciones expresivas que combinan elementos tradicionales con una visión contemporánea. Desde Planet Melmac, continúa perfeccionando su propuesta artística y creando piezas únicas llenas de personalidad y significado.",
+    specialties: ["Neo tradicional", "Linea Fina", "Tradicional"],
+    socials: {
+      tiktok: "https://tiktok.com/@donjuan",
+      instagram: "https://instagram.com/donjuan",
+      whatsapp: "https://wa.me/59100000000"
+    },
+    variant: "don-juan"
+  },
+  "juanma": {
+    slug: "juanma",
+    name: "Juan Maria Savedra",
+    alias: "Juanma",
+    avatar: "/images/assets/new3.png",
+    themeColor: "#ffffff",
+    bio: "Juan María, conocido artísticamente como Juanma, tiene 25 años y cuenta con más de 3 años de experiencia en el mundo del tatuaje. Su especialidad son los tatuajes de estilo botánico, caracterizados por su delicadeza y atención al detalle. Actualmente desarrolla su trabajo en Cochabamba y Sucre, donde continúa perfeccionando su técnica y creando piezas únicas que reflejan la esencia de cada cliente.",
+    specialties: ["Botánico", "Puntillismo", "Blackwork"],
+    socials: {
+      tiktok: "https://tiktok.com/@juanma",
+      instagram: "https://instagram.com/juanma",
+      whatsapp: "https://wa.me/59100000000"
+    },
+    variant: "juanma"
+  },
+  "pistacho-tattoo": {
+    slug: "pistacho-tattoo",
+    name: "Ignacio Orihuela",
+    alias: "PISTACHO TATTOO",
+    avatar: "/images/assets/new2.png",
+    themeColor: "#22c55e",
+    bio: "Ignacio, conocido artísticamente como Pistacho, tiene 24 años y más de 3 años de experiencia en el mundo del tatuaje. Especializado en el estilo neotradicional, se caracteriza por crear piezas llenas de personalidad, utilizando líneas sólidas, colores intensos y composiciones dinámicas. Actualmente forma parte del equipo de Planet Melmac, donde sigue perfeccionando su técnica y transformando las ideas de sus clientes en diseños únicos y memorables.",
+    specialties: ["Fine Line", "Tradicional", "Neotradicional", "Blackwork"],
+    socials: {
+      tiktok: "https://tiktok.com/@pistachotattoo",
+      instagram: "https://instagram.com/pistachotattoo",
+      whatsapp: "https://wa.me/59100000000"
+    },
+    variant: "pistacho-tattoo"
+  },
+  "profe-tattoo": {
+    slug: "profe-tattoo",
+    name: "Fabian Morales",
+    alias: "Profe Tattoo",
+    avatar: "/images/assets/Profe Tattoo.png",
+    themeColor: "#111827",
+    bio: "Fabián, conocido artísticamente como Profe Tattoo, lleva más de 7 años dedicados al arte del tatuaje. Es fundador de TintaLatte, su estudio profesional, donde plasma su experiencia y pasión en cada proyecto. Su extensa trayectoria le ha permitido dominar diversos estilos de tatuaje, convirtiéndose en un artista versátil reconocido por la calidad, precisión y excelencia de su trabajo.",
+    specialties: ["Fine Line", "Realismo", "Blackwork", "Patch Tattoo"],
+    socials: {
+      tiktok: "https://tiktok.com/@profetattoo",
+      instagram: "https://instagram.com/profetattoo",
+      whatsapp: "https://wa.me/59100000000"
+    },
+    variant: "profe-tattoo"
+  }
+};
+
+artistsData["natalia-lazzo"] = artistsData["black-kitty"];
+artistsData["juan-caballero"] = artistsData["don-juan"];
+artistsData["juan-maria-savedra"] = artistsData["juanma"];
+artistsData["ignacio-orihuela"] = artistsData["pistacho-tattoo"];
+artistsData["fabian-morales"] = artistsData["profe-tattoo"];
+
+const artist = artistsData[slug as string] || artistsData["black-kitty"];
+---
+
+<Layout title={`${artist.name} (${artist.alias}) | Artista`} currentPage="artistas">
+  <!-- Container Wrapper -->
+  <div class="mx-auto w-full max-w-[1308px] px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
+    <div class="overflow-hidden rounded-[35px] shadow-2xl transition-all duration-300">
+
+      {/* =========================================
+          VARIANT 1: BLACK KITTY (Pink / Magenta Dark)
+         ========================================= */}
+      {artist.variant === "black-kitty" && (
+        <div class="relative bg-[#0d0710] text-white p-8 sm:p-12 lg:p-16 border border-pink-900/30 overflow-hidden min-h-[640px] flex flex-col justify-between">
+          <!-- Background Smokey Graphic -->
+          <div class="absolute inset-0 bg-radial from-[#4a0d33]/40 via-transparent to-transparent pointer-events-none"></div>
+          <img src="/images/assets/tattoo-background.png" alt="" class="absolute right-0 top-0 w-[550px] opacity-15 mix-blend-screen pointer-events-none filter hue-rotate-[290deg]" />
+
+          <!-- Top Layout Grid -->
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <!-- Left Info Column (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col">
+              <span class="font-['Inter',Helvetica] text-xl font-bold tracking-widest text-white/80 uppercase">
+                TU TATUADOR
+              </span>
+              <!-- Metal / Gothic Logo Text -->
+              <h1 class="mt-2 font-['David_Libre',serif] text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-[#f62b8d] to-white drop-shadow-[0_0_25px_rgba(246,43,141,0.6)]">
+                {artist.alias}
+              </h1>
+
+              <p class="mt-8 font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-gray-300 max-w-xl">
+                {artist.bio}
+              </p>
+
+              <!-- Specialties vertically on left -->
+              <div class="mt-12">
+                <h3 class="font-['David_Libre',Helvetica] text-2xl font-bold tracking-wide uppercase text-white mb-6">
+                  ESPECIALIDADES
+                </h3>
+                <div class="flex flex-col gap-4 max-w-[260px]">
+                  {artist.specialties.map((spec: string) => (
+                    <div class="flex items-center justify-between px-6 py-3.5 bg-black/60 border border-[#f62b8d]/40 rounded-[20px] text-white font-['Inter',Helvetica] text-sm font-semibold hover:border-[#f62b8d] hover:shadow-[0_0_15px_rgba(246,43,141,0.4)] transition-all cursor-pointer">
+                      <span>{spec}</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f62b8d" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column (5 cols): Moon Avatar & Booking -->
+            <div class="lg:col-span-5 flex flex-col items-center lg:border-l-2 lg:border-[#f62b8d]/60 lg:pl-12">
+              <!-- Moon Avatar Frame -->
+              <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-[40px] overflow-hidden border-4 border-[#f62b8d]/80 shadow-[0_0_40px_rgba(246,43,141,0.5)]">
+                <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover filter contrast-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#f62b8d]/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Booking Section Below Divider -->
+              <div class="mt-14 flex flex-col items-center text-center">
+                <h3 class="font-['David_Libre',Helvetica] text-2xl font-extrabold tracking-wider text-[#f62b8d] uppercase">
+                  AGENDA UNA CITA YA!
+                </h3>
+                <div class="text-[#f62b8d] my-3">▼</div>
+
+                <div class="flex items-center gap-5 mt-4">
+                  <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#f62b8d] flex items-center justify-center text-[#f62b8d] hover:bg-[#f62b8d] hover:text-white transition-all transform hover:scale-110 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+                  </a>
+                  <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#f62b8d] flex items-center justify-center text-[#f62b8d] hover:bg-[#f62b8d] hover:text-white transition-all transform hover:scale-110 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </a>
+                  <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#f62b8d] flex items-center justify-center text-[#f62b8d] hover:bg-[#f62b8d] hover:text-white transition-all transform hover:scale-110 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================
+          VARIANT 2: DON JUAN CABALLERO (Gold & Hannya)
+         ========================================= */}
+      {artist.variant === "don-juan" && (
+        <div class="relative bg-[#141414] text-white p-8 sm:p-12 lg:p-16 border border-yellow-700/30 overflow-hidden min-h-[640px]">
+          <!-- Background Hannya Mask Watermark -->
+          <div class="absolute inset-0 flex justify-center items-center opacity-25 pointer-events-none">
+            <img src="/images/assets/neo-traditional-home.png" alt="" class="w-full max-w-[650px] object-contain filter grayscale contrast-200" />
+          </div>
+
+          <!-- Header -->
+          <div class="relative z-10 text-center mb-12">
+            <span class="font-['Inter',Helvetica] text-xl font-bold tracking-widest text-white/80 uppercase">
+              TU TATUADOR
+            </span>
+            <h1 class="mt-2 font-['David_Libre',serif] text-4xl sm:text-6xl font-extrabold tracking-wider text-[#eab308] drop-shadow-[0_0_20px_rgba(234,179,8,0.4)]">
+              {artist.alias}
+            </h1>
+          </div>
+
+          <!-- Content Grid -->
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <!-- Left Avatar & Bio (6 cols) -->
+            <div class="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
+              <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#eab308] shadow-[0_0_30px_rgba(234,179,8,0.3)] mb-6">
+                <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover" />
+              </div>
+              <p class="font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-gray-300 max-w-lg">
+                {artist.bio}
+              </p>
+            </div>
+
+            <!-- Right Specialties & Booking (6 cols) -->
+            <div class="lg:col-span-6 flex flex-col items-center lg:border-l-2 lg:border-[#eab308] lg:pl-12">
+              <h3 class="font-['David_Libre',Helvetica] text-2xl font-extrabold tracking-wide uppercase text-white mb-6">
+                ESPECIALIDADES
+              </h3>
+
+              <div class="flex flex-col gap-4 w-full max-w-[280px]">
+                {artist.specialties.map((spec: string) => (
+                  <div class="flex items-center justify-between px-6 py-3.5 bg-black/80 border border-[#eab308]/50 rounded-full text-white font-['Inter',Helvetica] text-sm font-bold hover:bg-[#eab308] hover:text-black transition-all cursor-pointer group shadow-lg">
+                    <span>{spec}</span>
+                    <span class="text-[#eab308] group-hover:text-black transition-colors font-bold">&gt;</span>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Booking Section -->
+              <div class="mt-14 flex flex-col items-center text-center">
+                <h3 class="font-['David_Libre',Helvetica] text-2xl font-extrabold tracking-wider text-[#eab308] uppercase">
+                  AGENDA UNA CITA YA!
+                </h3>
+                <div class="flex items-center gap-5 mt-6">
+                  <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#eab308] bg-[#eab308]/10 flex items-center justify-center text-[#eab308] hover:bg-[#eab308] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+                  </a>
+                  <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#eab308] bg-[#eab308]/10 flex items-center justify-center text-[#eab308] hover:bg-[#eab308] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                  <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#eab308] bg-[#eab308]/10 flex items-center justify-center text-[#eab308] hover:bg-[#eab308] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================
+          VARIANT 3: JUANMA (Botanical Cursive)
+         ========================================= */}
+      {artist.variant === "juanma" && (
+        <div class="relative bg-[#2d2d2d] text-white p-8 sm:p-12 lg:p-16 overflow-hidden min-h-[640px]">
+          <!-- Background Botanical Overlay -->
+          <img src="/images/assets/flowers-in-black.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-screen" />
+
+          <!-- Top Hero Split -->
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Avatar Left (4 cols) -->
+            <div class="lg:col-span-4 flex justify-center lg:justify-start">
+              <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-white/80 shadow-2xl">
+                <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            <!-- Header & Bio Right (8 cols) -->
+            <div class="lg:col-span-8 flex flex-col text-center lg:text-left">
+              <span class="font-['Inter',Helvetica] text-xl font-bold tracking-widest text-white/80 uppercase">
+                TU TATUADOR
+              </span>
+              <h1 class="mt-2 font-['David_Libre',serif] text-5xl sm:text-7xl font-bold italic tracking-wide text-white drop-shadow-md">
+                {artist.alias}
+              </h1>
+              <p class="mt-6 font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-gray-200 max-w-2xl">
+                {artist.bio}
+              </p>
+            </div>
+          </div>
+
+          <!-- Horizontal Divider -->
+          <div class="relative z-10 my-12 border-t border-white/30"></div>
+
+          <!-- Especialidades & Booking Grid -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <h3 class="font-['David_Libre',Helvetica] text-3xl font-extrabold tracking-wide uppercase text-white mb-8">
+              ESPECIALIDADES
+            </h3>
+
+            <div class="flex flex-wrap justify-center gap-6 mb-14">
+              {artist.specialties.map((spec: string) => (
+                <div class="flex items-center gap-4 px-8 py-4 bg-black/70 border border-white/30 rounded-full text-white font-['Inter',Helvetica] text-base font-semibold hover:border-white transition-all cursor-pointer shadow-lg">
+                  <span>{spec}</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              ))}
+            </div>
+
+            <!-- Agenda una Cita Bottom Row -->
+            <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl pt-6 border-t border-white/20 gap-6">
+              <h3 class="font-['David_Libre',Helvetica] text-2xl sm:text-3xl font-extrabold tracking-wider text-white uppercase">
+                AGENDA UNA CITA YA!
+              </h3>
+              <div class="flex items-center gap-5">
+                <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+                </a>
+                <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-2 border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================
+          VARIANT 4: PISTACHO TATTOO (Neon Green & Brick Graffiti)
+         ========================================= */}
+      {artist.variant === "pistacho-tattoo" && (
+        <div class="relative bg-[#181818] text-white p-8 sm:p-12 lg:p-16 border-2 border-[#22c55e]/40 overflow-hidden min-h-[640px]">
+          <!-- Background Graffiti Wall -->
+          <div class="absolute inset-0 bg-radial from-[#22c55e]/15 via-transparent to-transparent pointer-events-none"></div>
+
+          <!-- Top Hero Grid -->
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Squircle Avatar Left (5 cols) -->
+            <div class="lg:col-span-5 flex justify-center">
+              <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[35px] overflow-hidden border-4 border-[#22c55e] shadow-[0_0_35px_rgba(34,197,94,0.4)]">
+                <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            <!-- Title & Bio Right (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col text-center lg:text-left">
+              <span class="font-['Inter',Helvetica] text-xl font-bold tracking-widest text-white/80 uppercase">
+                TU TATUADOR
+              </span>
+              <h1 class="mt-2 font-['David_Libre',serif] text-4xl sm:text-6xl font-black tracking-wider text-[#22c55e] drop-shadow-[0_0_20px_rgba(34,197,94,0.6)] uppercase">
+                {artist.alias}
+              </h1>
+              <p class="mt-6 font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-gray-200 max-w-xl">
+                {artist.bio}
+              </p>
+            </div>
+          </div>
+
+          <!-- Green Horizontal Divider Line -->
+          <div class="relative z-10 my-12 border-t-2 border-[#22c55e]"></div>
+
+          <!-- Especialidades Grid -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <h3 class="font-['David_Libre',Helvetica] text-3xl font-extrabold tracking-wide uppercase text-white mb-8">
+              ESPECIALIDADES
+            </h3>
+
+            <div class="flex flex-wrap justify-center gap-5 mb-14">
+              {artist.specialties.map((spec: string) => (
+                <div class="flex items-center gap-4 px-7 py-3.5 bg-black/80 border-2 border-[#22c55e] rounded-full text-[#22c55e] font-['Inter',Helvetica] text-sm font-bold hover:bg-[#22c55e] hover:text-black transition-all cursor-pointer shadow-lg">
+                  <span>{spec}</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              ))}
+            </div>
+
+            <!-- Agenda una Cita Bottom Row -->
+            <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl pt-6 border-t border-[#22c55e]/40 gap-6">
+              <div class="flex items-center gap-4 text-2xl sm:text-3xl font-extrabold tracking-wider text-white uppercase font-['David_Libre',Helvetica]">
+                <span>AGENDA UNA CITA YA!</span>
+                <span class="text-[#22c55e] text-4xl">&rarr;</span>
+              </div>
+
+              <div class="flex items-center gap-5">
+                <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#22c55e] bg-[#22c55e]/10 flex items-center justify-center text-[#22c55e] hover:bg-[#22c55e] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+                </a>
+                <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#22c55e] bg-[#22c55e]/10 flex items-center justify-center text-[#22c55e] hover:bg-[#22c55e] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-2 border-[#22c55e] bg-[#22c55e]/10 flex items-center justify-center text-[#22c55e] hover:bg-[#22c55e] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================
+          VARIANT 5: PROFE TATTOO (Light Brick & Dark Accent)
+         ========================================= */}
+      {artist.variant === "profe-tattoo" && (
+        <div class="relative bg-[#dedede] text-black p-8 sm:p-12 lg:p-16 border border-gray-400/40 overflow-hidden min-h-[640px]">
+          <!-- Top Hero Grid -->
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Circle Avatar Left (5 cols) -->
+            <div class="lg:col-span-5 flex justify-center">
+              <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-8 border-[#2e2e2e] shadow-2xl">
+                <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            <!-- Title & Bio Right (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col text-center lg:text-left">
+              <span class="font-['Inter',Helvetica] text-xl font-bold tracking-widest text-black/80 uppercase">
+                TU TATUADOR
+              </span>
+              <h1 class="mt-2 font-['David_Libre',serif] text-5xl sm:text-7xl font-bold italic tracking-wide text-black drop-shadow-sm">
+                {artist.alias}
+              </h1>
+              <p class="mt-6 font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-[#3a3a3a] max-w-xl">
+                {artist.bio}
+              </p>
+            </div>
+          </div>
+
+          <!-- Dark Horizontal Divider Line -->
+          <div class="relative z-10 my-12 border-t-2 border-black/80"></div>
+
+          <!-- Especialidades Grid -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <h3 class="font-['David_Libre',Helvetica] text-3xl font-extrabold tracking-wide uppercase text-black mb-8">
+              ESPECIALIDADES
+            </h3>
+
+            <div class="flex flex-wrap justify-center gap-5 mb-14">
+              {artist.specialties.map((spec: string) => (
+                <div class="flex items-center gap-4 px-7 py-3.5 bg-[#404040] text-white rounded-full font-['Inter',Helvetica] text-sm font-bold hover:bg-black transition-all cursor-pointer shadow-md">
+                  <span>{spec}</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              ))}
+            </div>
+
+            <!-- Agenda una Cita Bottom Row -->
+            <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl pt-6 border-t border-black/30 gap-6">
+              <div class="flex items-center gap-4 text-2xl sm:text-3xl font-extrabold tracking-wider text-black uppercase font-['David_Libre',Helvetica]">
+                <span>AGENDA UNA CITA YA!</span>
+                <span class="text-black text-4xl">&rarr;</span>
+              </div>
+
+              <div class="flex items-center gap-5">
+                <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-black hover:text-white transition-all transform hover:scale-110 shadow-lg border border-black/20">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+                </a>
+                <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-black hover:text-white transition-all transform hover:scale-110 shadow-lg border border-black/20">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-black hover:text-white transition-all transform hover:scale-110 shadow-lg border border-black/20">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+    </div>
+  </div>
+</Layout>

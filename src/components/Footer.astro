@@ -1,39 +1,42 @@
-<footer class="px-4 py-10 sm:px-6 lg:px-0 lg:py-14" aria-label="Pie de página">
-  <div class="mx-auto grid max-w-[1308px] gap-8 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+---
+---
+<footer class="w-full bg-[#f4f4f4] border-t border-black/10 px-4 py-10 sm:px-6 lg:px-8 lg:py-14" aria-label="Pie de página">
+  <div class="mx-auto grid max-w-[1308px] gap-8 md:grid-cols-[1.4fr_1fr_1fr_1.2fr] items-start">
     <section aria-label="Información de Llajtattoo">
       <img class="h-auto w-32 object-cover sm:w-48 lg:w-[226px]" src="/images/footer-logo.png" alt="Llajtattoo">
-      <p class="mt-4 max-w-[198px] font-['Inter',Helvetica] text-base leading-[29px] text-[#5c6674]">
+      <p class="mt-4 max-w-[220px] font-['Inter',Helvetica] text-base leading-[28px] text-[#5c6674]">
         Bienvenido a nuestra comunidad de Tatuadores de Cochabamba Bolivia
       </p>
     </section>
     <nav aria-labelledby="footer-navigation">
       <h2 id="footer-navigation" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black leading-[29px]">NAVIGATION</h2>
       <ul class="mt-1 space-y-0">
-        <li><a href="/" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10">Inicio</a></li>
-        <li><a href="/estilos" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10">Estilos</a></li>
-        <li><a href="/artistas" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10">Artistas</a></li>
-        <li><a href="#unete" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10">Unete</a></li>
+        <li><a href="/" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Inicio</a></li>
+        <li><a href="/estilos" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Estilos</a></li>
+        <li><a href="/artistas" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Artistas</a></li>
+        <li><a href="/unete" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Únete</a></li>
+        <li><a href="/blog" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Blog</a></li>
       </ul>
     </nav>
     <section aria-labelledby="social-links">
       <h2 id="social-links" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black leading-[29px]">REDES SOCIALES</h2>
       <ul class="mt-1 space-y-0">
-        <li><a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10">Instagram</a></li>
-        <li><a href="https://api.whatsapp.com/send?phone=59176138478&text=Hola!" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10">Whatsapp</a></li>
-        <li><a href="https://www.tiktok.com/@blackitty.tattoo?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10">Tik tok</a></li>
+        <li><a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Instagram</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=59176138478&text=Hola!" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Whatsapp</a></li>
+        <li><a href="https://www.tiktok.com/@blackitty.tattoo?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Tik tok</a></li>
       </ul>
     </section>
-    <section class="self-start rounded-[30px] bg-[#000000e8] px-7 py-10 text-center shadow-[0px_4px_4px_0px_rgba(0,0,0,0.3),0px_8px_12px_6px_rgba(0,0,0,0.15)] min-h-[123px] flex items-center justify-center" aria-label="Únete a la comunidad">
-      <a href="#aplicar" class="inline-flex rounded-[10px] bg-white px-8 py-2.5 font-['David_Libre',Helvetica] text-2xl font-medium text-black hover:bg-[#dcdcdc] transition-all hover:-translate-y-0.5">
+    <section class="rounded-[30px] bg-black p-8 text-center shadow-xl flex items-center justify-center min-h-[120px]" aria-label="Únete a la comunidad">
+      <a href="/unete" class="inline-flex rounded-full bg-white px-10 py-3 font-['David_Libre',Helvetica] text-2xl font-bold text-black hover:bg-[#dcdcdc] transition-all hover:scale-105">
         ÚNETE
       </a>
     </section>
   </div>
-  <div class="mx-auto mt-8 flex max-w-[1308px] flex-col gap-3 border-t border-black/20 pt-5 font-['Inter',Helvetica] text-xl text-black/40 sm:flex-row sm:items-center sm:justify-between">
-    <p class="font-medium tracking-[0.8px] leading-[29px]">© 2025 Llajtattoo | All Rights Reserved. Design by Blackitty</p>
-    <div class="flex gap-5">
-      <a href="#terms" class="font-medium tracking-[0] leading-[0.1px] hover:text-black transition-colors">Terms of Service</a>
-      <a href="#privacy" class="font-medium tracking-[0] leading-[0.1px] hover:text-black transition-colors">Privacity Policity</a>
+  <div class="mx-auto mt-8 flex max-w-[1308px] flex-col gap-3 border-t border-black/15 pt-6 font-['Inter',Helvetica] text-sm text-black/60 sm:flex-row sm:items-center sm:justify-between">
+    <p class="font-medium tracking-[0.5px]">© 2025 Llajtattoo | All Rights Reserved. Design by Blackitty</p>
+    <div class="flex gap-6">
+      <a href="#terms" class="font-medium hover:text-black transition-colors">Terms of Service</a>
+      <a href="#privacy" class="font-medium hover:text-black transition-colors">Privacy Policy</a>
     </div>
   </div>
 </footer>

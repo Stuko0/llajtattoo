@@ -7,40 +7,44 @@ const links = [
   { href: "/", label: "Inicio", id: "inicio" },
   { href: "/estilos", label: "Estilos", id: "estilos" },
   { href: "/artistas", label: "Artistas", id: "artistas" },
-  { href: "#unete", label: "Únete", id: "unete" },
-  { href: "#noticias", label: "Blog", id: "blog" },
+  { href: "/unete", label: "Únete", id: "unete" },
+  { href: "/blog", label: "Blog", id: "blog" },
 ];
 ---
 
-<header class="mx-auto flex w-full max-w-[1308px] items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-0 lg:py-[38px]">
-  <a href="/" class="shrink-0" aria-label="Llajtattoo, ir al inicio">
-    <img class="h-auto w-[100px] object-contain sm:w-[180px] lg:w-[337px]" src="/images/logo.png" alt="Llajtattoo">
-  </a>
-  <nav class="hidden items-center gap-[29px] lg:flex" aria-label="Navegación principal">
-    {links.map((link) => (
-      <a
-        href={link.href}
-        class={`font-['Inter',Helvetica] text-[32px] font-normal leading-[39px] ${
-          currentPage === link.id
-            ? "text-[#999999]"
-            : "text-black hover:text-[#999999] transition-colors"
-        }`}
+<header class="w-full bg-[#f4f4f4]">
+  <div class="mx-auto flex w-full max-w-[1308px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:py-8">
+    <a href="/" class="shrink-0" aria-label="Llajtattoo, ir al inicio">
+      <img class="h-auto w-[120px] object-contain sm:w-[180px] lg:w-[280px]" src="/images/logo.png" alt="Llajtattoo">
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex xl:gap-10" aria-label="Navegación principal">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class={`font-['Inter',Helvetica] text-2xl xl:text-[30px] font-normal leading-tight transition-colors ${
+            currentPage === link.id
+              ? "text-[#999999] font-medium"
+              : "text-black hover:text-[#999999]"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <form class="hidden items-center rounded-full bg-black px-5 py-2 sm:flex h-[44px] shrink-0" role="search">
+      <label for="site-search" class="sr-only">Buscar estilo</label>
+      <svg class="mr-2.5 h-6 w-6 text-white shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+      </svg>
+      <input
+        id="site-search"
+        name="search"
+        type="search"
+        placeholder="Buscar estilo"
+        class="w-24 border-0 bg-transparent font-['Inter',Helvetica] text-base font-medium text-white outline-none placeholder:text-[#999999] lg:w-[130px]"
       >
-        {link.label}
-      </a>
-    ))}
-  </nav>
-  <form class="hidden items-center rounded-full bg-black px-[25px] py-2 sm:flex h-[44.5px]" role="search">
-    <label for="site-search" class="sr-only">Buscar estilo</label>
-    <svg class="mr-2 h-[32.5px] w-[32.5px] text-white shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-    </svg>
-    <input
-      id="site-search"
-      name="search"
-      type="search"
-      placeholder="Buscar estilo"
-      class="w-24 border-0 bg-transparent font-['Inter',Helvetica] text-xl font-medium text-white outline-none placeholder:text-[#999999] lg:w-[140px]"
-    >
-  </form>
+    </form>
+  </div>
 </header>

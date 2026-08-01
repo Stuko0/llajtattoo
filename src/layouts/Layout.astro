@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import StarRating from "../components/StarRating.tsx";
 
 export interface Props {
   title: string;
@@ -18,18 +17,24 @@ const { title, currentPage } = Astro.props;
     <meta name="description" content="Comunidad de tatuadores de Cochabamba, Bolivia. Encuentra artistas, estilos y agenda tu próxima cita." />
     <title>{title} | Llajtattoo | Comunidad de tatuadores</title>
     <link rel="icon" href="/favicon.svg" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>
       tailwind.config = {
         corePlugins: { preflight: false },
-        theme: { extend: {} },
+        theme: {
+          extend: {
+            boxShadow: {
+              "m3-elevation-light-5": "var(--m3-elevation-light-5)"
+            }
+          }
+        },
         plugins: []
       };
     </script>
   </head>
-  <body class="m-0 bg-white text-black">
-    <Navbar />
-    <main>
+  <body class="m-0 min-h-screen bg-[#f4f4f4] font-['Inter',Helvetica,sans-serif] text-black antialiased flex flex-col justify-between">
+    <Navbar currentPage={currentPage} />
+    <main class="w-full flex-1">
       <slot />
     </main>
     <Footer />
