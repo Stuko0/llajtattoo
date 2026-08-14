@@ -1,6 +1,19 @@
+# Dependencias y build
 node_modules/
 dist/
+
+# Entorno y secretos
 .env
+.env.*
+!.env.example
 .DS_Store
 *.local
+
+# Artefactos de desarrollo de Astro (se regeneran en cada dev/build)
+.astro/
+
+# Dump de exportación desde Figma (originales full-res, reproducibles vía API + manifest.json)
+public/images/figma/
+
+# Otros
 .freebuff/
