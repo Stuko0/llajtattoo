@@ -13,6 +13,7 @@ const styles: StyleEntry[] = [
   {
     id: "fineline",
     name: "FINELINE",
+    fontClass: "ff-dosis",
     desc: "El estilo Fine Line se caracteriza por el uso de aguja extremadamente fina para crear trazos delicados, precisos y minimalistas. Ideal para personas que buscan un diseño discreto y elegante.",
     img: "/images/assets/fine-line-home.png",
     artists: [
@@ -22,6 +23,7 @@ const styles: StyleEntry[] = [
   {
     id: "tradicionales",
     name: "TRADICIONALES",
+    fontClass: "ff-david",
     desc: "El tatuaje Tradicional u Old School destaca por sus líneas negras gruesas, paleta de colores primarios y motivos icónicos como marineros, dagas y rosas.",
     img: "/images/assets/traditional-home.png",
     artists: [
@@ -31,6 +33,7 @@ const styles: StyleEntry[] = [
   {
     id: "neotradicional",
     name: "NEOTRADICIONAL",
+    fontClass: "ff-bmhanna",
     desc: "Una evolución del tradicional que añade sombreados detallados, variaciones en el grosor de línea y una paleta de colores más rica y moderna.",
     img: "/images/assets/neo-traditional-home.png",
     artists: [
@@ -40,6 +43,7 @@ const styles: StyleEntry[] = [
   {
     id: "blackwork",
     name: "BLACKWORK",
+    fontClass: "ff-caesar",
     desc: "Enfocado exclusivamente en el uso de tinta negra sólida para crear patrones geométricos, ilustraciones oscuras y piezas de alto impacto visual.",
     img: "/images/assets/blackwork.png",
     artists: [
@@ -49,6 +53,7 @@ const styles: StyleEntry[] = [
   {
     id: "realismo",
     name: "REALISMO",
+    fontClass: "ff-carter",
     desc: "Captura retratos, paisajes y objetos con precisión fotográfica utilizando degradados suaves de sombras y luces.",
     img: "/images/assets/realism1-home.png",
     artists: [
@@ -59,6 +64,7 @@ const styles: StyleEntry[] = [
   {
     id: "puntillismo",
     name: "PUNTILLISMO",
+    fontClass: "ff-doto",
     desc: "Técnica basada en la composición mediante miles de puntos individuales para formar volúmenes, texturas y sombreados.",
     img: "/images/assets/realism2-home.png",
     artists: [
@@ -68,6 +74,7 @@ const styles: StyleEntry[] = [
   {
     id: "patch",
     name: "PATCH",
+    fontClass: "ff-modak",
     desc: "Simula el efecto visual de un parche de tela bordado en la piel, con bordes gruesos y texturas de hilos hiperrealistas.",
     img: "/images/assets/new4.png",
     artists: [
@@ -77,6 +84,7 @@ const styles: StyleEntry[] = [
   {
     id: "botanico",
     name: "BOTÁNICO",
+    fontClass: "ff-elsie",
     desc: "Inspirado en la naturaleza: flores, ramas, hojas y elementos orgánicos plasmados con sutileza y elegancia.",
     img: "/images/assets/new3.png",
     artists: [
@@ -86,6 +94,7 @@ const styles: StyleEntry[] = [
   {
     id: "newschool",
     name: "NEW SCHOOL",
+    fontClass: "ff-betania",
     desc: "Estilo graffiti y caricaturesco con colores extremadamente brillantes, perspectiva exagerada y contornos marcados.",
     img: "/images/assets/new2.png",
     artists: [
@@ -95,6 +104,7 @@ const styles: StyleEntry[] = [
   {
     id: "culturales",
     name: "CULTURALES",
+    fontClass: "ff-barrio",
     desc: "Inspirado en simbologías ancestrales, mitología andina y representaciones tradicionales con profundo significado histórico.",
     img: "/images/assets/new1.png",
     artists: [
@@ -104,6 +114,7 @@ const styles: StyleEntry[] = [
   {
     id: "tribales",
     name: "TRIBALES",
+    fontClass: "ff-changa",
     desc: "Patrones sólidos de tinta negra inspirados en antiguas tradiciones polinesias, maoríes y africanas.",
     img: "/images/assets/blackwork.png",
     artists: [
@@ -113,6 +124,7 @@ const styles: StyleEntry[] = [
   {
     id: "neotribal",
     name: "NEO TRIBAL",
+    fontClass: "ff-grechen",
     desc: "Reinterpretación futurista del tribal con formas cibernéticas, orgánicas y fluidas que contornean el cuerpo.",
     img: "/images/assets/fine-line-home.png",
     artists: [
@@ -135,14 +147,14 @@ export default function StyleAccordion() {
             <button
               key={s.id}
               onClick={() => setActiveIdx(i)}
-              className={`flex items-center justify-between px-7 py-4 rounded-[10px] transition-all text-left font-['David_Libre',serif] text-xl font-bold tracking-wider ${
+              className={`flex items-center justify-between px-6 py-3 rounded-[10px] transition-all text-left fs-btn ${s.fontClass} tracking-wider ${
                 isActive
                   ? "bg-black text-white shadow-lg scale-[1.02]"
                   : "bg-[#101a24] text-white/90 hover:bg-black hover:text-white"
               }`}
             >
               <span>{s.name}</span>
-              <span className="text-xl font-normal opacity-70">&rsaquo;</span>
+              <span className="text-2xl font-normal opacity-70">&rsaquo;</span>
             </button>
           );
         })}
