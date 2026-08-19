@@ -76,7 +76,7 @@ const artists = [
       {artists.map((a) => (
         <article class={`flex flex-col items-center text-center ${a.stagger}`}>
           <div class="relative h-44 w-44 overflow-hidden rounded-full border-4 border-black/10 shadow-lg">
-            <img src={a.img} alt={a.name} class="h-full w-full object-cover" />
+            <img src={a.img} alt={a.name} class="h-full w-full object-cover grayscale" />
           </div>
           <h3 class="mt-5 font-['David_Libre',Helvetica] text-xl font-bold text-black">
             {a.name}
