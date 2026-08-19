@@ -5,15 +5,18 @@ export default function StarRating() {
   const [hover, setHover] = useState(0);
 
   return (
-    <section className="relative mx-auto max-w-[1308px] overflow-hidden px-4 py-12 text-center sm:px-6 lg:px-0 lg:py-20" aria-labelledby="rating-title">
-      {/* Decorative background images */}
-      <img className="pointer-events-none absolute left-0 top-3/4 hidden w-64 -translate-y-1/2 opacity-40 lg:block" src="/images/assets/flower.png" alt="" />
-      <img className="pointer-events-none absolute right-0 top-0 hidden w-64 opacity-40 lg:block" src="/images/assets/flower.png" alt="" />
-      <div className="relative mx-auto max-w-[747px] bg-[#f3f3f3] px-6 py-16 shadow-[0px_4px_4px_#00000040]">
+    <section className="relative mx-auto max-w-[1308px] overflow-hidden px-4 py-12 text-center sm:px-6 lg:px-0 lg:py-20 mb-20" aria-labelledby="rating-title">
+      {/* Decorative background image (izquierda) */}
+      <img className="pointer-events-none absolute left-10 top-[45%] hidden w-[281px] opacity-30 lg:block z-10" src="/images/assets/spider-black.png" alt="" />
+      <img
+        src="/images/assets/spider-black.png"
+        alt=""
+        className="pointer-events-none absolute mr-12 top-0 hidden w-[200px] opacity-30 sm:w-[240px] lg:right-4 lg:block lg:w-[281px] z-10"/>
+      <div className="relative mx-auto max-w-[747px] rounded-xs bg-[#f3f3f3] px-6 py-16 shadow-[0px_4px_4px_#00000040]">
         <h2 id="rating-title" className="font-['David_Libre',Helvetica] text-3xl font-bold sm:text-4xl lg:text-[50px] lg:leading-[58px]">
           CALIFICA LA PÁGINA
         </h2>
-        <div className="mx-auto mt-8 max-w-[456px] h-[108px] flex items-center justify-center rounded-full bg-black px-8 py-4">
+        <div className="mx-auto mt-8 mb-24 max-w-[456px] h-[108px] flex items-center justify-center rounded-full bg-black px-8 py-4">
           <p className="font-['David_Libre',Helvetica] text-base font-bold leading-6 text-white sm:text-xl sm:leading-[35px]">
             ¿Quedaste satisfecho con los resultados de busqueda?
           </p>
