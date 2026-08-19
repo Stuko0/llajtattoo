@@ -19,6 +19,7 @@ interface StyleEntry {
 const IMG = {
   fabian: "/images/assets/Profe Tattoo.jpg",
   juan: "/images/assets/Don Juan Caballero.jpg",
+  juanma: "/images/assets/Juanma.jpg",
   natalia: "/images/assets/Black Kitty.png",
   ignacio: "/images/assets/Pistacho.jpg",
 };
@@ -72,7 +73,7 @@ const styles: StyleEntry[] = [
     img: `${S}blackwork-1.jpg`,
     img2: `${S}blackwork-2.jpg`,
     artists: [
-      { name: "Juan Maria Savedra", tag: "JUANMA", img: IMG.juan },
+      { name: "Juan Maria Savedra", tag: "JUANMA", img: IMG.juanma },
       { name: "Natalia Lazzo", tag: "BLACKITTY", img: IMG.natalia },
       { name: "Ignacio Orihuela", tag: "PISTACHO", img: IMG.ignacio },
     ],
@@ -95,7 +96,7 @@ const styles: StyleEntry[] = [
     img2: `${S}puntillismo-2.jpg`,
     artists: [
       { name: "Natalia Lazzo", tag: "BLACKITTY", img: IMG.natalia },
-      { name: "Juan Maria Savedra", tag: "JUANMA", img: IMG.juan },
+      { name: "Juan Maria Savedra", tag: "JUANMA", img: IMG.juanma },
     ],
   },
   {
@@ -114,7 +115,7 @@ const styles: StyleEntry[] = [
     desc: "El tatuaje botánico es un estilo de arte corporal que recrea plantas, flores, hojas y enredaderas con gran detalle y realismo, imitando el estilo de las antiguas ilustraciones científicas. Se caracteriza por el uso de líneas muy finas, trazos precisos y un sombreado delicado que resalta las formas orgánicas de la naturaleza.",
     img: `${S}botanico-1.jpg`,
     img2: `${S}botanico-2.jpg`,
-    artists: [{ name: "Juan Maria Savedra", tag: "JUANMA", img: IMG.juan }],
+    artists: [{ name: "Juan Maria Savedra", tag: "JUANMA", img: IMG.juanma }],
   },
   {
     id: "newschool",
