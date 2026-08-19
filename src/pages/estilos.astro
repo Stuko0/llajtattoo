@@ -22,15 +22,15 @@ import StyleAccordion from "../components/StyleAccordion";
 
   <!-- Interactive Style Exploration Section -->
   <section class="relative mx-auto w-full max-w-[1308px] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-    <!-- Ramas decorativas de fondo -->
+    <!-- Ramas decorativas de fondo: derecha al inicio de la lista, izquierda a la mitad -->
     <img class="pointer-events-none absolute right-0 top-0 hidden w-48 opacity-30 lg:block" src="/images/assets/branch.png" alt="" />
     <img class="pointer-events-none absolute left-0 top-1/2 hidden w-48 -translate-y-1/2 opacity-30 lg:block" src="/images/assets/branch.png" alt="" />
 
     <StyleAccordion client:load />
 
-    <!-- Bottom background tattoo illustration watermark -->
-    <div class="flex justify-end">
-      <img src="/images/assets/tattoo-background.png" alt="" class="w-full max-w-[450px] opacity-80 pointer-events-none" />
+    <!-- Bottom background tattoo illustration watermark: subido y en la misma capa que el dragón -->
+    <div class="relative z-[5] -mt-44 flex justify-end pointer-events-none">
+      <img src="/images/assets/tattoo-background.png" alt="" class="w-full max-w-[450px] opacity-80" />
     </div>
   </section>
 </Layout>
