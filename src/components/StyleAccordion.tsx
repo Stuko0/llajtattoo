@@ -183,7 +183,7 @@ export default function StyleAccordion() {
       </div>
 
       {/* Style Details Container — dividido: negro (superior) + claro (artistas) */}
-      <div className="relative overflow-hidden rounded-tr-[8rem] rounded-br-[8rem] rounded-bl-[8rem] bg-black border border-[#ecedee] flex flex-col text-center">
+      <div className="relative overflow-hidden rounded-tr-[8rem] rounded-br-[8rem] rounded-bl-[8rem] bg-black border border-white flex flex-col text-center">
         {/* Zona negra: título hereda tipografía del botón + imagen/es + descripción (z-6: tapa al dragón z-5) */}
         <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-6 items-center bg-black">
           <h2 className={`${selectedStyle.fontClass} text-7xl font-bold text-white leading-tight`}>
