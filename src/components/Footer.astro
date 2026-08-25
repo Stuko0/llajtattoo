@@ -1,42 +1,49 @@
 ---
+export interface Props {
+  /** "dark" = footer invertido (fondo negro, texto blanco) para vistas de perfil */
+  theme?: "light" | "dark";
+}
+const { theme = "light" } = Astro.props;
+const dark = theme === "dark";
 ---
-<footer class="w-full bg-cw px-4 py-10 sm:px-6 lg:px-8 lg:py-14" aria-label="Pie de página">
+
+<footer class={`w-full px-4 py-10 sm:px-6 lg:px-8 lg:py-14 ${dark ? "bg-[#0d0d0d]" : "bg-cw"}`} aria-label="Pie de página">
   <div class="mx-auto grid max-w-[1308px] gap-8 md:grid-cols-[1.4fr_1fr_1fr_1.2fr] items-start">
     <section aria-label="Información de Llajtattoo">
-      <img class="h-auto w-32 object-cover sm:w-48 lg:w-[226px]" src="/images/footer-logo.png" alt="Llajtattoo">
-      <p class="mt-4 ml-2 max-w-[220px] font-['Inter',Helvetica] text-base leading-[28px] text-[#5c6674]">
+      <img class={`h-auto w-32 object-cover sm:w-48 lg:w-[226px] ${dark ? "invert" : ""}`} src="/images/footer-logo.png" alt="Llajtattoo">
+      <p class={`mt-4 ml-2 max-w-[220px] font-['Inter',Helvetica] text-base leading-[28px] ${dark ? "text-white/70" : "text-[#5c6674]"}`}>
         Bienvenido a nuestra comunidad de Tatuadores de Cochabamba Bolivia
       </p>
     </section>
     <nav aria-labelledby="footer-navigation">
-      <h2 id="footer-navigation" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black leading-[29px]">NAVIGATION</h2>
+      <h2 id="footer-navigation" class={`font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] leading-[29px] ${dark ? "text-white" : "text-black"}`}>NAVIGATION</h2>
       <ul class="mt-1 space-y-0">
-        <li><a href="/" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Inicio</a></li>
-        <li><a href="/estilos" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Estilos</a></li>
-        <li><a href="/artistas" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Artistas</a></li>
-        <li><a href="/unete" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Únete</a></li>
-        <li><a href="/blog" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Blog</a></li>
+        <li><a href="/" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Inicio</a></li>
+        <li><a href="/estilos" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Estilos</a></li>
+        <li><a href="/artistas" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Artistas</a></li>
+        <li><a href="/unete" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Únete</a></li>
+        <li><a href="/blog" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Blog</a></li>
       </ul>
     </nav>
     <section aria-labelledby="social-links">
-      <h2 id="social-links" class="font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] text-black leading-[29px]">REDES SOCIALES</h2>
+      <h2 id="social-links" class={`font-['Inter',Helvetica] text-xs font-bold tracking-[2.4px] leading-[29px] ${dark ? "text-white" : "text-black"}`}>REDES SOCIALES</h2>
       <ul class="mt-1 space-y-0">
-        <li><a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Instagram</a></li>
-        <li><a href="https://api.whatsapp.com/send?phone=59176138478&text=Hola!" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Whatsapp</a></li>
-        <li><a href="https://www.tiktok.com/@blackitty.tattoo?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="block font-['Inter',Helvetica] text-base text-[#5c6674] hover:text-black leading-10 transition-colors">Tik tok</a></li>
+        <li><a href="https://www.instagram.com/blackitty.tattoo/" target="_blank" rel="noopener noreferrer" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Instagram</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=59176138478&text=Hola!" target="_blank" rel="noopener noreferrer" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Whatsapp</a></li>
+        <li><a href="https://www.tiktok.com/@blackitty.tattoo?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class={`block font-['Inter',Helvetica] text-base leading-10 transition-colors ${dark ? "text-white/70 hover:text-white" : "text-[#5c6674] hover:text-black"}`}>Tik tok</a></li>
       </ul>
     </section>
-    <section class="rounded-[30px] bg-black p-3 text-center shadow-xl flex items-center justify-center min-h-[120px]" aria-label="Únete a la comunidad">
-      <a href="/unete" class="inline-flex rounded-tl-xl rounded-tr-sm rounded-br-xl rounded-bl-sm bg-white px-16 py-3 font-['David_Libre',Helvetica] text-2xl font-bold text-black hover:bg-[#dcdcdc] transition-all hover:scale-105">
+    <section class={`rounded-[30px] p-3 shadow-xl flex items-center justify-center min-h-[120px] ${dark ? "bg-white" : "bg-black"}`} aria-label="Únete a la comunidad">
+      <a href="/unete" class={`inline-flex rounded-tl-xl rounded-tr-sm rounded-br-xl rounded-bl-sm px-16 py-3 font-['David_Libre',Helvetica] text-2xl font-bold transition-all hover:scale-105 ${dark ? "bg-black text-white hover:bg-[#333333]" : "bg-white text-black hover:bg-[#dcdcdc]"}`}>
         ÚNETE
       </a>
     </section>
   </div>
-  <div class="mx-auto mt-8 flex max-w-[1308px] flex-col gap-3 border-t border-black/15 pt-6 font-['Inter',Helvetica] text-sm text-black/60 sm:flex-row sm:items-center sm:justify-between">
+  <div class={`mx-auto mt-8 flex max-w-[1308px] flex-col gap-3 border-t pt-6 font-['Inter',Helvetica] text-sm sm:flex-row sm:items-center sm:justify-between ${dark ? "border-white/15 text-white/60" : "border-black/15 text-black/60"}`}>
     <p class="font-medium tracking-[0.5px]">© 2025 Llajtattoo | All Rights Reserved. Design by Blackitty</p>
     <div class="flex gap-6">
-      <a href="#terms" class="font-medium hover:text-black transition-colors">Terms of Service</a>
-      <a href="#privacy" class="font-medium hover:text-black transition-colors">Privacy Policy</a>
+      <a href="#terms" class={`font-medium transition-colors ${dark ? "hover:text-white" : "hover:text-black"}`}>Terms of Service</a>
+      <a href="#privacy" class={`font-medium transition-colors ${dark ? "hover:text-white" : "hover:text-black"}`}>Privacy Policy</a>
     </div>
   </div>
 </footer>

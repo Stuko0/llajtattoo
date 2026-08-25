@@ -105,10 +105,9 @@ artistsData["fabian-morales"] = artistsData["profe-tattoo"];
 const artist = artistsData[slug as string] || artistsData["black-kitty"];
 ---
 
-<Layout title={`${artist.name} (${artist.alias}) | Artista`} currentPage="artistas">
-  <!-- Container Wrapper -->
-  <div class="mx-auto w-full max-w-[1308px] px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
-    <div class="overflow-hidden rounded-[35px] shadow-2xl transition-all duration-300">
+<Layout title={`${artist.name} (${artist.alias}) | Artista`} currentPage="artistas" theme="dark">
+  {/* Contenido full-bleed: ocupa todo el ancho/alto disponible (navbar y footer respetados) */}
+  <div class="w-full min-h-full">
 
       {/* =========================================
           VARIANT 1: BLACK KITTY (Pink / Magenta Dark)
@@ -462,7 +461,5 @@ const artist = artistsData[slug as string] || artistsData["black-kitty"];
           </div>
         </div>
       )}
-
     </div>
-  </div>
 </Layout>
