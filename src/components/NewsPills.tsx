@@ -1,5 +1,14 @@
 import { useState } from "react";
 
+interface NewsPillsProps {
+  /** Ancho máximo del contenedor (ej: "500px", "100%"). Default "350px" */
+  maxWidth?: string;
+  /** Alto del contenedor (ej: "400px"). Default "300px" */
+  height?: string;
+  /** Alto máximo del contenedor. Sin límite por defecto */
+  maxHeight?: string;
+}
+
 const pills = [
   { img: "/images/assets/new1.png", alt: "Noticia 1" },
   { img: "/images/assets/new2.png", alt: "Noticia 2" },
@@ -7,7 +16,7 @@ const pills = [
   { img: "/images/assets/new4.png", alt: "Noticia 4" },
 ];
 
-export default function NewsPills() {
+export default function NewsPills({ maxWidth, height, maxHeight }: NewsPillsProps) {
   const [active, setActive] = useState(0);
   return (
     <div
@@ -15,8 +24,9 @@ export default function NewsPills() {
       style={{
         display: "flex",
         gap: "8px",
-        height: "300px",
-        maxWidth: "350px",
+        height: height ?? "300px",
+        maxHeight: maxHeight,
+        maxWidth: maxWidth ?? "350px",
         margin: "0 auto",
         justifyContent: "center",
         alignItems: "stretch",
