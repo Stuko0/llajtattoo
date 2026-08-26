@@ -153,6 +153,8 @@ const specialtyImages: Record<string, string[]> = {
                     {artist.bio}
                   </p>
                 </div>
+              <!-- Horizontal Divider -->
+              <div class="relative z-10 my-8 border-t border-[#f72b8e]/40"></div>
               <!-- Specialties vertically on left -->
               <div class="mt-12 items-start">
                 <h3 class="font-['Blinker',Helvetica] text-[40px] font-bold tracking-wide uppercase text-black mb-6 leading-none">
@@ -193,7 +195,7 @@ const specialtyImages: Record<string, string[]> = {
                 </h3>
                 <div class="text-[#f72b8e] my-3">▼</div>
 
-                <div class="flex items-center gap-5 mt-4">
+                <div class="flex flex-col items-center gap-5 mt-4">
                   <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-[3px] border-[#f62b8d] bg-[#d9d9d9] flex items-center justify-center text-[#f62b8d] hover:bg-[#f62b8d] hover:text-white transition-all transform hover:scale-110 shadow-lg">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
                   </a>
@@ -214,18 +216,18 @@ const specialtyImages: Record<string, string[]> = {
           VARIANT 2: DON JUAN CABALLERO (Gold & Hannya)
          ========================================= */}
       {artist.variant === "don-juan" && (
-        <div class="relative bg-[#141414] text-white p-8 sm:p-12 lg:p-16 border border-yellow-700/30 overflow-hidden min-h-[640px]">
+        <div class="relative bg-[#141414] text-white p-8 sm:p-12 lg:p-16 overflow-hidden min-h-[640px]">
           <!-- Background Hannya Mask Watermark -->
           <div class="absolute inset-0 flex justify-center items-center opacity-25 pointer-events-none">
-            <img src="/images/assets/neo-traditional-home.png" alt="" class="w-full max-w-[650px] object-contain filter grayscale contrast-200" />
+            <img src="/images/assets/don juan-bg.jpg" alt="" class="w-full object-fill filter contrast-200 opacity-50" />
           </div>
 
           <!-- Header -->
           <div class="relative z-10 text-center mb-12">
-            <span class="font-['Blinker',Helvetica] text-xl font-light tracking-widest text-white/80 uppercase">
+            <span class="font-['Blinker',Helvetica] text-5xl tracking-widest text-white uppercase">
               TU TATUADOR
             </span>
-            <h1 class="mt-2 font-['Frank_Ruhl_Libre',serif] text-4xl sm:text-6xl font-normal tracking-wider text-[#f6b100] drop-shadow-[0_0_20px_rgba(246,177,0,0.4)]">
+            <h1 class="mt-2 font-['Frank_Ruhl_Libre',serif] text-6xl font-normal tracking-wider text-[#f6b100] drop-shadow-[0_0_30px_rgba(229,247,194,0.6)] ">
               {artist.alias}
             </h1>
           </div>
@@ -233,17 +235,17 @@ const specialtyImages: Record<string, string[]> = {
           <!-- Content Grid -->
           <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <!-- Left Avatar & Bio (6 cols) -->
-            <div class="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left">
-              <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#f6b100] shadow-[0_0_30px_rgba(246,177,0,0.3)] mb-6">
+            <div class="lg:col-span-6 flex flex-col items-center text-center border-r-3 lg:border-[#f6b100]">
+              <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden shadow-[0_0_30px_rgba(246,177,0,0.3)] mb-6">
                 <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover" />
               </div>
-              <p class="font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-gray-300 max-w-lg">
+              <p class="font-['Inter',Helvetica] text-sm sm:text-base text-justify leading-relaxed text-white max-w-lg">
                 {artist.bio}
               </p>
             </div>
 
             <!-- Right Specialties & Booking (6 cols) -->
-            <div class="lg:col-span-6 flex flex-col items-center lg:border-l-2 lg:border-[#f6b100] lg:pl-12">
+            <div class="lg:col-span-6 flex flex-col items-left">
               <h3 class="font-['Blinker',Helvetica] text-[40px] font-bold tracking-wide uppercase text-white mb-6 leading-none">
                 ESPECIALIDADES
               </h3>
@@ -265,24 +267,29 @@ const specialtyImages: Record<string, string[]> = {
                   />
                 ))}
               </div>
-
-              <!-- Booking Section -->
-              <div class="mt-14 flex flex-col items-center text-center">
-                <h3 class="font-['Blinker',Helvetica] text-[40px] font-semibold tracking-wider text-[#f6b100] uppercase leading-none">
-                  AGENDA UNA CITA YA!
-                </h3>
-                <div class="flex items-center gap-5 mt-6">
-                  <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-[#f6b100] bg-[#d9d9d9] flex items-center justify-center text-[#f6b100] hover:bg-[#f6b100] hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
-                  </a>
-                  <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-[#f6b100] bg-[#d9d9d9] flex items-center justify-center text-[#f6b100] hover:bg-[#f6b100] hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                  </a>
-                  <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-[#f6b100] bg-[#d9d9d9] flex items-center justify-center text-[#f6b100] hover:bg-[#f6b100] hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                  </a>
-                </div>
-              </div>
+            </div>
+          </div>
+          <!-- Booking Section -->
+          <div class="mt-14 flex flex-col items-center text-center">
+            <h3 class="font-['Blinker',Helvetica] text-[40px] font-semibold tracking-wider text-[#f6b100] uppercase leading-none">
+              AGENDA UNA CITA YA!
+            </h3>
+            <div class="flex items-center gap-12 mt-6">
+              <a href={artist.socials.tiktok} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-[#f6b100] flex items-center justify-center text-[#f6b100] hover:bg-[#f6b100] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg class="h-14 w-14 fill-current" viewBox="0 0 62 72" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32.9282 0H44.8684C45.2886 4.92264 49.3033 15.2725 62 17.2911V28.8679C58.4896 28.9174 50.1488 27.8438 44.8684 23.1537V52.6153C43.8548 58.849 37.9712 71.45 22.5454 71.9843C7.1195 72.5186 1.13703 59.2943 0.0740294 52.6153C-0.593436 44.1306 2.96638 27.0275 22.5454 26.4932V37.9958C19.1092 38.2679 11.5693 42.3 11.5693 49.6469C11.5693 56.9937 18.4658 59.7058 22.5454 59.6653C26.6249 59.6249 32.9282 57.2906 32.9282 49.6469C32.9282 42.0032 32.5821 13.5063 32.9282 0Z" fill="#F6B100"/>
+                  </svg>
+              </a>
+              <a href={artist.socials.instagram} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-[#f6b100] flex items-center justify-center text-[#f6b100] hover:bg-[#f6b100] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+              </a>
+              <a href={artist.socials.whatsapp} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-[#f6b100] flex items-center justify-center text-[#f6b100] hover:bg-[#f6b100] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                  <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -294,33 +301,34 @@ const specialtyImages: Record<string, string[]> = {
       {artist.variant === "juanma" && (
         <div class="relative bg-[#2d2d2d] text-white p-8 sm:p-12 lg:p-16 overflow-hidden min-h-[640px]">
           <!-- Background Botanical Overlay -->
-          <img src="/images/assets/flowers-in-black.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-screen" />
+          <img src="/images/assets/jaunma-bg.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-screen" />
 
           <!-- Top Hero Split -->
-          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 ml-[20rem]">
             <!-- Avatar Left (4 cols) -->
-            <div class="lg:col-span-4 flex justify-center lg:justify-start">
-              <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-white/80 shadow-2xl">
+            <div class="lg:col-span-4 flex flex-col justify-center items-center">
+                <span class="font-['Blinker',Helvetica] text-5xl font-light tracking-widest text-white uppercase pb-5">
+                  TU TATUADOR
+                </span>
+              <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover" />
               </div>
             </div>
 
             <!-- Header & Bio Right (8 cols) -->
-            <div class="lg:col-span-8 flex flex-col text-center lg:text-left">
-              <span class="font-['Blinker',Helvetica] text-xl font-light tracking-widest text-white/80 uppercase">
-                TU TATUADOR
-              </span>
-              <h1 class="mt-2 font-['Fuggles',serif] text-5xl sm:text-7xl font-normal tracking-wide text-white drop-shadow-md">
+            <div class="lg:col-span-8 flex flex-col text-left">
+              
+              <h1 class="font-['Fuggles',serif] text-[8rem] font-normal tracking-wide text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8),0_0_30px_rgba(255,255,255,0.5),0_0_60px_rgba(255,255,255,0.3)]">
                 {artist.alias}
               </h1>
-              <p class="mt-6 font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-gray-200 max-w-2xl">
+              <p class="font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-white max-w-2xl">
                 {artist.bio}
               </p>
             </div>
           </div>
 
           <!-- Horizontal Divider -->
-          <div class="relative z-10 my-12 border-t border-white/30"></div>
+          <div class="relative z-10 my-12 border-t-3 border-white"></div>
 
           <!-- Especialidades & Booking Grid -->
           <div class="relative z-10 flex flex-col items-center text-center">
@@ -347,21 +355,27 @@ const specialtyImages: Record<string, string[]> = {
             </div>
 
             <!-- Agenda una Cita Bottom Row -->
-            <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl pt-6 border-t border-white/20 gap-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl pt-6 gap-6">
               <h3 class="font-['Blinker',Helvetica] text-[40px] font-semibold tracking-wider text-white uppercase leading-none">
                 AGENDA UNA CITA YA!
               </h3>
-              <div class="flex items-center gap-5">
-                <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-white bg-[#d9d9d9] flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+              <div class="flex items-center gap-5 mt-6">
+                <a href={artist.socials.tiktok} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 62 72" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32.9282 0H44.8684C45.2886 4.92264 49.3033 15.2725 62 17.2911V28.8679C58.4896 28.9174 50.1488 27.8438 44.8684 23.1537V52.6153C43.8548 58.849 37.9712 71.45 22.5454 71.9843C7.1195 72.5186 1.13703 59.2943 0.0740294 52.6153C-0.593436 44.1306 2.96638 27.0275 22.5454 26.4932V37.9958C19.1092 38.2679 11.5693 42.3 11.5693 49.6469C11.5693 56.9937 18.4658 59.7058 22.5454 59.6653C26.6249 59.6249 32.9282 57.2906 32.9282 49.6469C32.9282 42.0032 32.5821 13.5063 32.9282 0Z" fill="#FFFFFF"/>
+                    </svg>
                 </a>
-                <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-white bg-[#d9d9d9] flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <a href={artist.socials.instagram} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                 </a>
-                <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-white bg-[#d9d9d9] flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <a href={artist.socials.whatsapp} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
                 </a>
-              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -371,25 +385,26 @@ const specialtyImages: Record<string, string[]> = {
           VARIANT 4: PISTACHO TATTOO (Neon Green & Brick Graffiti)
          ========================================= */}
       {artist.variant === "pistacho-tattoo" && (
-        <div class="relative bg-[#181818] text-white p-8 sm:p-12 lg:p-16 border-2 border-[#00fd3b]/40 overflow-hidden min-h-[640px]">
-          <!-- Background Graffiti Wall -->
-          <div class="absolute inset-0 bg-radial from-[#00fd3b]/15 via-transparent to-transparent pointer-events-none"></div>
+        <div class="relative bg-[#181818] text-white p-8 sm:p-12 lg:p-16 border-2 border-[#00FD3B]/40 overflow-hidden min-h-[640px]">
+            <div class="absolute inset-0 flex justify-center items-center opacity-25 pointer-events-none">
+              <img src="/images/assets/pistacho-bg.jpg" alt="" class="w-full object-fill filter contrast-200 opacity-50" />
+            </div>
 
           <!-- Top Hero Grid -->
           <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <!-- Squircle Avatar Left (5 cols) -->
             <div class="lg:col-span-5 flex justify-center">
-              <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[35px] overflow-hidden border-4 border-[#00fd3b] shadow-[0_0_35px_rgba(0,253,59,0.4)]">
+              <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-[35px] overflow-hidden">
                 <img src={artist.avatar} alt={artist.name} class="w-full h-full object-cover" />
               </div>
             </div>
 
             <!-- Title & Bio Right (7 cols) -->
             <div class="lg:col-span-7 flex flex-col text-center lg:text-left">
-              <span class="font-['Blinker',Helvetica] text-xl font-light tracking-widest text-white/80 uppercase">
+              <span class="font-['Blinker',Helvetica] text-6xl font-light tracking-widest text-white uppercase">
                 TU TATUADOR
               </span>
-              <h1 class="mt-2 font-['Gajraj_One',serif] text-4xl sm:text-6xl font-normal tracking-wider text-[#00fd3b] drop-shadow-[0_0_20px_rgba(0,253,59,0.6)] uppercase">
+              <h1 class="mt-2 font-['Gajraj_One',serif] text-4xl sm:text-6xl font-normal tracking-wider text-[#00FD3B] drop-shadow-[0_0_10px_rgba(0,253,59,0.9),0_0_30px_rgba(0,253,59,0.6),0_0_60px_rgba(0,253,59,0.4),0_0_100px_rgba(0,253,59,0.2)] uppercase">
                 {artist.alias}
               </h1>
               <p class="mt-6 font-['Inter',Helvetica] text-sm sm:text-base leading-relaxed text-gray-200 max-w-xl">
@@ -399,7 +414,7 @@ const specialtyImages: Record<string, string[]> = {
           </div>
 
           <!-- Green Horizontal Divider Line -->
-          <div class="relative z-10 my-12 border-t-2 border-[#00fd3b]"></div>
+          <div class="relative z-10 my-12 border-t-4 border-[#00FD3B]"></div>
 
           <!-- Especialidades Grid -->
           <div class="relative z-10 flex flex-col items-center text-center">
@@ -413,10 +428,10 @@ const specialtyImages: Record<string, string[]> = {
                   client:load
                   label={spec}
                   images={specialtyImages[spec] || []}
-                  accent="#00fd3b"
+                  accent="#00FD3B"
                   pillBg="bg-black/80"
-                  pillText="text-[#00fd3b]"
-                  pillBorder="border-2 border-[#00fd3b]"
+                  pillText="text-[#00FD3B]"
+                  pillBorder="border-4 border-[#00FD3B]"
                   pillRadius="rounded-full"
                   fontFamily="font-['David_Libre',Helvetica]"
                   fontWeight="font-bold"
@@ -426,21 +441,26 @@ const specialtyImages: Record<string, string[]> = {
             </div>
 
             <!-- Agenda una Cita Bottom Row -->
-            <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl pt-6 border-t border-[#00fd3b]/40 gap-6">
-              <div class="flex items-center gap-4 text-2xl sm:text-[40px] font-semibold tracking-wider text-white uppercase font-['Blinker',Helvetica] leading-none">
+            <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl pt-6 gap-6">
+              <div class="flex items-center gap-1 text-4xl font-semibold tracking-wider text-white uppercase font-['Blinker',Helvetica] leading-none">
                 <span>AGENDA UNA CITA YA!</span>
-                <span class="text-[#00fd3b] text-4xl">&rarr;</span>
+                <span class="text-white text-5xl">&rarr;</span>
               </div>
-
-              <div class="flex items-center gap-5">
-                <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-[#00fd3b] bg-[#d9d9d9] flex items-center justify-center text-[#00fd3b] hover:bg-[#00fd3b] hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+              <div class="flex items-center gap-5 mt-6">
+                <a href={artist.socials.tiktok} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-[#00FD3B] flex items-center justify-center text-[#00FD3B] hover:bg-[#00FD3B] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 62 72" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32.9282 0H44.8684C45.2886 4.92264 49.3033 15.2725 62 17.2911V28.8679C58.4896 28.9174 50.1488 27.8438 44.8684 23.1537V52.6153C43.8548 58.849 37.9712 71.45 22.5454 71.9843C7.1195 72.5186 1.13703 59.2943 0.0740294 52.6153C-0.593436 44.1306 2.96638 27.0275 22.5454 26.4932V37.9958C19.1092 38.2679 11.5693 42.3 11.5693 49.6469C11.5693 56.9937 18.4658 59.7058 22.5454 59.6653C26.6249 59.6249 32.9282 57.2906 32.9282 49.6469C32.9282 42.0032 32.5821 13.5063 32.9282 0Z" fill="#00FD3B"/>
+                    </svg>
                 </a>
-                <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-[#00fd3b] bg-[#d9d9d9] flex items-center justify-center text-[#00fd3b] hover:bg-[#00fd3b] hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <a href={artist.socials.instagram} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-[#00FD3B] flex items-center justify-center text-[#00FD3B] hover:bg-[#00FD3B] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                 </a>
-                <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-[1.5px] border-[#00fd3b] bg-[#d9d9d9] flex items-center justify-center text-[#00fd3b] hover:bg-[#00fd3b] hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <a href={artist.socials.whatsapp} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-[#00FD3B] flex items-center justify-center text-[#00FD3B] hover:bg-[#00FD3B] hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
                 </a>
               </div>
             </div>
@@ -453,6 +473,9 @@ const specialtyImages: Record<string, string[]> = {
          ========================================= */}
       {artist.variant === "profe-tattoo" && (
         <div class="relative bg-[#dedede] text-black p-8 sm:p-12 lg:p-16 border border-gray-400/40 overflow-hidden min-h-[640px]">
+            <div class="absolute inset-0 flex justify-center items-center opacity-25 pointer-events-none">
+              <img src="/images/assets/profe-bg.png" alt="" class="w-full object-fill filter contrast-200 opacity-50" />
+            </div>
           <!-- Top Hero Grid -->
           <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <!-- Circle Avatar Left (5 cols) -->
@@ -464,7 +487,7 @@ const specialtyImages: Record<string, string[]> = {
 
             <!-- Title & Bio Right (7 cols) -->
             <div class="lg:col-span-7 flex flex-col text-center lg:text-left">
-              <span class="font-['Blinker',Helvetica] text-xl font-light tracking-widest text-black/80 uppercase">
+              <span class="font-['Blinker',Helvetica] text-4xl font-light tracking-widest text-black/80 uppercase">
                 TU TATUADOR
               </span>
               <h1 class="mt-2 font-['Hurricane',regular] text-5xl sm:text-7xl font-bold italic tracking-wide text-black drop-shadow-sm">
@@ -510,17 +533,23 @@ const specialtyImages: Record<string, string[]> = {
                 <span class="text-white bold text-4xl">&rarr;</span>
               </div>
 
-              <div class="flex items-center gap-5">
-                <a href={artist.socials.tiktok} target="_blank" class="w-14 h-14 rounded-full border-[6px] border-white bg-[#d9d9d9] text-white flex items-center justify-center hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V2h3.5a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+              <div class="flex items-center gap-5 mt-6">
+                <a href={artist.socials.tiktok} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 62 72" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32.9282 0H44.8684C45.2886 4.92264 49.3033 15.2725 62 17.2911V28.8679C58.4896 28.9174 50.1488 27.8438 44.8684 23.1537V52.6153C43.8548 58.849 37.9712 71.45 22.5454 71.9843C7.1195 72.5186 1.13703 59.2943 0.0740294 52.6153C-0.593436 44.1306 2.96638 27.0275 22.5454 26.4932V37.9958C19.1092 38.2679 11.5693 42.3 11.5693 49.6469C11.5693 56.9937 18.4658 59.7058 22.5454 59.6653C26.6249 59.6249 32.9282 57.2906 32.9282 49.6469C32.9282 42.0032 32.5821 13.5063 32.9282 0Z" fill="#FFFFFF"/>
+                    </svg>
                 </a>
-                <a href={artist.socials.instagram} target="_blank" class="w-14 h-14 rounded-full border-[6px] border-white bg-[#d9d9d9] text-white flex items-center justify-center hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <a href={artist.socials.instagram} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                 </a>
-                <a href={artist.socials.whatsapp} target="_blank" class="w-14 h-14 rounded-full border-[6px] border-white bg-[#d9d9d9] text-white flex items-center justify-center hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <a href={artist.socials.whatsapp} target="_blank" class="w-24 h-24 rounded-full border-[1.5px] border-white flex items-center justify-center text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg">
+                    <svg class="h-14 w-14 fill-current" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
                 </a>
-              </div>
+            </div>
             </div>
           </div>
         </div>
