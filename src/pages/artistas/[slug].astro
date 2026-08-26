@@ -407,7 +407,7 @@ const specialtyImages: Record<string, string[]> = {
               ESPECIALIDADES
             </h3>
 
-            <div class="flex flex-col items-stretch gap-[100px] mb-14 w-full max-w-[350px]">
+            <div class="flex flex-wrap justify-center items-center gap-[100px] mb-14 w-full max-w-[350px]">
               {artist.specialties.map((spec: string) => (
                 <SpecialtyExpand
                   client:load
@@ -485,7 +485,7 @@ const specialtyImages: Record<string, string[]> = {
               ESPECIALIDADES
             </h3>
 
-            <div class="flex flex-col items-center gap-[150px] mb-14 w-full max-w-[350px]">
+            <div class="flex flex-wrap justify-center items-center gap-[150px] mb-14 w-full max-w-[350px]">
               {artist.specialties.map((spec: string) => (
                 <SpecialtyExpand
                   client:load
